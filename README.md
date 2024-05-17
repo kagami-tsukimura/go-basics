@@ -13,3 +13,9 @@ go version
 ```bash
 go mod init <モジュール名>
 ```
+
+- build
+
+```bash
+go build -o <バイナリ名> <ファイル名>
+```
