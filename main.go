@@ -18,6 +18,12 @@ const (
 	LINUX
 )
 
+var (
+	i int
+	s string
+	b bool
+)
+
 func modulePackage() {
 	// module, package
 	godotenv.Load()
