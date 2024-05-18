@@ -144,10 +144,10 @@ func pointers() {
 	// 制御文
 	ok, result := true, "A"
 	if ok {
-		result = "OK"
+		result := "OK"
 		println(result)
 	} else {
-		result = "NG"
+		result := "NG"
 		println(result)
 	}
 	fmt.Printf("result: %v\n", result)
