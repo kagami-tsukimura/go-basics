@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-basics/calculator"
 	"os"
+	"unsafe"
 
 	"github.com/joho/godotenv"
 )
@@ -102,11 +103,11 @@ func pointers() {
 	var ui1 uint16
 	// pointer: メモリ内の1byte番地
 	// 先頭アドレス
-	fmt.Printf("memory address og ui1: %p\n", &ui1)
+	fmt.Printf("memory address of ui1: %p\n", &ui1)
 	var ui2 uint16
 	// pointer: メモリ内の1byte番地
 	// 先頭アドレス
-	fmt.Printf("memory address og ui2: %p\n", &ui2)
+	fmt.Printf("memory address of ui2: %p\n", &ui2)
 
 	// pointer変数: *<型>
 	// NOTE: pointer変数は型の宣言が必須
@@ -115,9 +116,11 @@ func pointers() {
 	// NIL
 	fmt.Printf("value of p1: %v\n", p1)
 	// ui1のアドレス情報をp1に代入
-	fmt.Println("Assign ui1 address information to p1")
+	fmt.Println("--- Assign ui1 address information to p1 ---")
 	p1 = &ui1
 	fmt.Printf("value of p1: %v\n", p1)
+	fmt.Printf("size of p1: %d[bytes]\n", unsafe.Sizeof(p1))
+	fmt.Printf("memory address of p1: %p\n", &p1)
 
 	fmt.Println("----------")
 }
