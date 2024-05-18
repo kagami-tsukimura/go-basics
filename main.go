@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// module, package
 	godotenv.Load()
 	fmt.Println(os.Getenv("GO_ENV"))
 	fmt.Println(calculator.Offset)
