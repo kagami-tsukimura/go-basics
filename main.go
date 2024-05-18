@@ -423,6 +423,7 @@ func functions() {
 	funcDefer()
 
 	files := []string{"file1.csv", "file2.csv", "file3.csv"}
+	// か延長引数: ...型
 	fmt.Printf("trim: %v\n", trim(files...))
 
 }
