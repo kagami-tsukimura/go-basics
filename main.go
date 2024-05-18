@@ -34,4 +34,8 @@ func main() {
 	// :=
 	l := 1
 	fmt.Println(l)
+	fmt.Printf("i: %v %T\n", i, i)
+	ui := uint16(6)
+	fmt.Printf("ui: %v %T\n", ui, ui)
+
 }
