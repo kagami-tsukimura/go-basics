@@ -433,6 +433,12 @@ func fileChecker(name string) (string, error) {
 	return name, nil
 }
 
+// 無名関数を引数に持つ関数
+// 第一引数: 無名関数、第二引数: name
+func addExt(f func(file string) string, name string) {
+	fmt.Println(f(name))
+}
+
 func functions() {
 	funcDefer()
 
@@ -470,8 +476,7 @@ func functions() {
 	f2 := func(file string) string {
 		return file + ".csv"
 	}
-
-	fmt.Printf("f2: %v\n", f2("file1"))
+	addExt(f2, trim(files...)[1])
 
 }
 
