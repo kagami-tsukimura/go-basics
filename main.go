@@ -306,6 +306,9 @@ func slices() {
 	m2["C"] = 30
 	fmt.Printf("m2: %v, len: %v, m2['A']: %v\n", m2, len(m2), m2["A"])
 	fmt.Println("----------")
+	delete(m2, "A")
+	fmt.Printf("m2: %v, len: %v, m2['A']: %v\n", m2, len(m2), m2["A"])
+	fmt.Println("----------")
 
 }
 
