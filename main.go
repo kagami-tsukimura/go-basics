@@ -319,6 +319,8 @@ func slices() {
 	v, ok = m2["C"]
 	fmt.Printf("m2['C']_v: %v, ok: %v\n", v, ok)
 
+	// mapの取り出し(ループ処理)
+
 }
 
 func main() {
