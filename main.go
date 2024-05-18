@@ -99,10 +99,8 @@ func variables() {
 }
 
 func pointers() {
-	i := 1
-	fmt.Println(i)
-	p := &i
-	fmt.Println(*p)
+	var ui1 uint16
+	fmt.Printf("memory address og ui1: %p\n", &ui1)
 	fmt.Println("----------")
 }
 
