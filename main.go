@@ -152,6 +152,7 @@ func pointers() {
 		result := "NG"
 		println(result)
 	}
+	// fmt.Printf("result: %v\n", "A")
 	fmt.Printf("result: %v\n", result)
 
 	fmt.Println("----------")
