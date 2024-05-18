@@ -399,12 +399,18 @@ func (task *Task) extendEstimateByPointer() {
 	task.Estimate += 10
 }
 
+func functions() {
+	// functions
+	// functions
+}
+
 func main() {
 
 	// modulePackage()
 	// variables()
 	// pointers()
 	// slices()
-	structs()
+	// structs()
+	functions()
 
 }
