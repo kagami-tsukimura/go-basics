@@ -124,7 +124,7 @@ func pointers() {
 	fmt.Printf("memory address of p1: %p\n", &p1)
 	// dereference: *<pointer> pointer変数が指し示すui1の値
 	fmt.Printf("value of ui1(dereference): %v\n", *p1)
-	// dereference: *<pointer> pointer変数が指し示すui1の値を変更
+	// ui1の値を変更
 	*p1 = 1
 	fmt.Printf("value of ui1: %v\n", ui1)
 
