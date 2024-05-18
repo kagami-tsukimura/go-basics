@@ -18,6 +18,9 @@ func main() {
 	sumResultFloat := calculator.Sum(1, 2.1)
 	fmt.Printf("a + b + offset = %g\n", sumResultNumber)
 	fmt.Printf("a + b + offset = %g\n", sumResultFloat)
-
 	fmt.Printf("(a * b) + offset = %g\n", calculator.Multiply(1, 2))
+
+	// variables
+	var i int
+	j := 1
 }
