@@ -45,11 +45,14 @@ func main() {
 	fmt.Printf("i: %[1]v %[1]T ui: %[2]v %[2]T\n", i, ui)
 	fmt.Println("----------")
 
-	f := 3.14
+	f := 3.1
 	fmt.Printf("f: %v %T\n", f, f)
 	s := "hello"
 	fmt.Printf("s: %v %T\n", s, s)
 	b := true
 	fmt.Printf("b: %v %T\n", b, b)
+
+	pi, title := 3.14, "Go"
+	fmt.Printf("pi: %v, title: %v\n", pi, title)
 
 }
