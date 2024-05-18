@@ -503,8 +503,9 @@ func functions() {
 
 	f4 := countUp()
 	// NOTE: 無名関数を呼び出し
-	fmt.Printf("f4: %v\n", f4(10))
-	fmt.Printf("f4: %v\n", f4(10))
+	for i := 1; i < 10; i++ {
+		fmt.Printf("f4: %v\n", f4(i))
+	}
 	fmt.Println("----------")
 
 }
