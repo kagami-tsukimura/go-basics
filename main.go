@@ -378,6 +378,10 @@ func structs() {
 	fmt.Println("----------")
 }
 
+func (task Task) extendEstimate() {
+	task.Estimate += 10
+}
+
 func main() {
 
 	// modulePackage()
