@@ -108,6 +108,7 @@ func pointers() {
 	// pointer: メモリ内の1byte番地
 	// 先頭アドレス
 	fmt.Printf("memory address of ui2: %p\n", &ui2)
+	fmt.Println("----------")
 
 	// pointer変数: *<型>
 	// NOTE: pointer変数は型の宣言が必須
@@ -127,6 +128,7 @@ func pointers() {
 	// ui1の値を変更
 	*p1 = 1
 	fmt.Printf("value of ui1: %v\n", ui1)
+	fmt.Println("----------")
 
 	// Double pointer
 	// **: p1の先頭アドレスを別のpointer変数(pp1)に格納
@@ -140,9 +142,11 @@ func pointers() {
 	// ui1の値を変更
 	**pp1 = 10
 	fmt.Printf("value of ui1: %v\n", ui1)
+	fmt.Println("----------")
 
 	// 制御文
 	// スコープ内外で異なるメモリ番地
+	println("異なるメモリ番地")
 	ok, result := true, "A"
 	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok {
@@ -159,8 +163,10 @@ func pointers() {
 	// "OK"のスコープ外のため、"A"
 	// fmt.Printf("result: %v\n", "A")
 	fmt.Printf("result: %v\n", result)
+	fmt.Println("----------")
 
 	// スコープ内外で同じメモリ番地
+	println("同じメモリ番地")
 	ok2, result2 := true, "A"
 	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok2 {
