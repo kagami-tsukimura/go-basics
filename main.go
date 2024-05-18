@@ -349,6 +349,13 @@ func structs() {
 	task2.Title = "new"
 	// task1, 2は別のメモリ領域
 	fmt.Printf("task1: %v, task2: %v\n", task1.Title, task2.Title)
+	fmt.Println("----------")
+
+	task1p := &Task{
+		Title:    "Learning concurrency",
+		Estimate: 2,
+	}
+	fmt.Printf("task1p: %v\n", task1p)
 }
 
 func main() {
