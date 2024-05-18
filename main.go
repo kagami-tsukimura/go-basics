@@ -268,7 +268,12 @@ func slices() {
 	// copy元（s5）の値は変更されない
 	fmt.Printf("s5 source of copy: %v %v %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6 dst rewrite after: %v %v %v\n", sc6, len(sc6), cap(sc6))
+	fmt.Println("----------")
 
+	s5 = make([]int, 4, 6)
+	fs6 := s5[1:3:3]
+	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
+	fmt.Printf("fs6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", fs6, len(fs6), cap(fs6))
 	fmt.Println("----------")
 }
 
