@@ -131,8 +131,8 @@ func pointers() {
 	// Double pointer
 	// **: p1の先頭アドレスを別のpointer変数(pp1)に格納
 	var pp1 **uint16 = &p1
+	// p1の先頭アドレス = pp1の先頭アドレス
 	fmt.Printf("value of pp1: %v\n", pp1)
-	fmt.Printf("value of *pp1: %v\n", *pp1)
 
 	fmt.Println("----------")
 }
