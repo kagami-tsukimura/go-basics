@@ -103,6 +103,11 @@ func pointers() {
 	// pointer: メモリ内の1byte番地
 	// 先頭アドレス
 	fmt.Printf("memory address og ui1: %p\n", &ui1)
+	var ui2 uint16
+	// pointer: メモリ内の1byte番地
+	// 先頭アドレス
+	fmt.Printf("memory address og ui2: %p\n", &ui2)
+
 	fmt.Println("----------")
 }
 
