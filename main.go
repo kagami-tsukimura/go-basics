@@ -191,6 +191,14 @@ func slices() {
 	a3 := [...]int{10, 20}
 	fmt.Println(a1, a2, a3)
 	fmt.Printf("%v %v %v\n", a1, a2, a3)
+	// len: 配列の要素数
+	// cap: 配列の容量
+	fmt.Printf("len(a1): %d\n", len(a1))
+	fmt.Printf("cap(a1): %d\n", cap(a1))
+	fmt.Printf("len(a2): %d\n", len(a2))
+	fmt.Printf("cap(a2): %d\n", cap(a2))
+	fmt.Printf("len(a3): %d\n", len(a3))
+	fmt.Printf("cap(a3): %d\n", cap(a3))
 }
 
 func main() {
