@@ -209,6 +209,10 @@ func slices() {
 	fmt.Println("s1 is nil?: ", s1 == nil)
 	// カーリーブラケットあり: not nil
 	fmt.Println("s2 is nil?: ", s2 == nil)
+
+	// sliceに要素を追加
+	s1 = append(s1, 1, 2, 3)
+	fmt.Printf("s1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
 }
 
 func main() {
