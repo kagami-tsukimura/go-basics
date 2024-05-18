@@ -52,10 +52,12 @@ func variables() {
 	fmt.Printf("s: %v %T\n", s, s)
 	b := true
 	fmt.Printf("b: %v %T\n", b, b)
-
 	fmt.Println("----------")
+
 	pi, title := 3.14, "Go"
 	fmt.Printf("pi: %v, title: %v\n", pi, title)
+	fmt.Println("----------")
+
 }
 
 func main() {
