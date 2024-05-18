@@ -342,7 +342,7 @@ func structs() {
 	fmt.Printf("Task: %v\n", task1)
 	// %+v: 構造体のフィールド名も追加で出力
 	fmt.Printf("Task: %+v\n", task1)
-	fmt.Printf("Task: %[1]T: %[1]v, Task.title: %v\n", task1, task1.Title)
+	fmt.Printf("Task: %[1]T: %[1]v, [%v]\n", task1, task1.Title)
 
 	fmt.Println("----------")
 }
