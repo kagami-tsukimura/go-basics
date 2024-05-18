@@ -44,5 +44,4 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 
 ## 言語仕様
 
-- 小文字の変数や関数: パッケージ内でのみ使用可能
-- 大文字の変数や関数:
+- 小文字の変数や関数: パッケージ内でのみ使用可能(Private)
