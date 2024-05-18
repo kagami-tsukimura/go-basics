@@ -357,7 +357,7 @@ func structs() {
 		Estimate: 2,
 	}
 	fmt.Printf("task1p: %v\n", task1p)
-	fmt.Printf("task1p: %v\n", *task1p)
+	fmt.Printf("task1p: %p\n", &task1p)
 }
 
 func main() {
