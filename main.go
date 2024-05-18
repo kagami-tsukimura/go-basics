@@ -311,9 +311,11 @@ func slices() {
 	fmt.Printf("m2: %v, len: %v, m2['A']: %v\n", m2, len(m2), m2["A"])
 	fmt.Println("----------")
 
-	// 存在しない値の0と存在する値の0の区別
+	// 存在しない値の0と存在する値の0の区別: valueの第2引数
+	// 存在しない: false
 	v, ok := m2["A"]
 	fmt.Printf("m2['A']_v: %v, ok: %v\n", v, ok)
+	// 存在する: true
 	v, ok = m2["C"]
 	fmt.Printf("m2['C']_v: %v, ok: %v\n", v, ok)
 
