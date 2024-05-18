@@ -147,8 +147,8 @@ func pointers() {
 	if ok {
 		// := スコープ内でのみ有効
 		result := "OK"
-		// println("OK")
 		fmt.Printf("memory address of result(in scope): %p\n", &result)
+		// println("OK")
 		println(result)
 	} else {
 		result := "NG"
