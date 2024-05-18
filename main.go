@@ -24,7 +24,8 @@ func modulePackage() {
 }
 
 func main() {
-	modulePackage()
+
+	// modulePackage()
 
 	// variables
 	// var
