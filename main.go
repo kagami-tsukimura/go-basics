@@ -98,9 +98,18 @@ func variables() {
 
 }
 
+func pointers() {
+	i := 1
+	fmt.Println(i)
+	p := &i
+	fmt.Println(*p)
+	fmt.Println("----------")
+}
+
 func main() {
 
 	// modulePackage()
-	variables()
+	// variables()
+	pointers()
 
 }
