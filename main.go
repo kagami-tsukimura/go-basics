@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"go-basics/calculator"
 	"os"
@@ -419,12 +420,34 @@ func trim(files ...string) []string {
 	return out
 }
 
+func fileChecker(name string) (string, error) {
+	f, err := os.Open(name)
+	if err != nil {
+		// string, error
+		return "", errors.New("file not found")
+	}
+	// 関数終了時に、リソースの解放
+	defer f.Close()
+
+	// string, error
+	return name, nil
+}
+
 func functions() {
 	funcDefer()
 
 	files := []string{"file1.csv", "file2.csv", "file3.csv"}
 	// か延長引数: ...型
 	fmt.Printf("trim: %v\n", trim(files...))
+	fmt.Println("----------")
+
+	name, err := fileChecker(trim(files...)[0])
+	if err != nil {
+		fmt.Printf("eror: %v\n", err)
+		return
+	}
+	fmt.Printf("name: %v\n", name)
+	fmt.Println("----------")
 
 }
 
