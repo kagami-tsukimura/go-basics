@@ -222,6 +222,9 @@ func slices() {
 	// make: capacity確保
 	s4 := make([]int, 0, 2)
 	fmt.Printf("s4_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s4, len(s4), cap(s4))
+	// capacityを超えた追加も可能
+	s4 = append(s4, 1, 2, 3, 4)
+	fmt.Printf("s4_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s4, len(s4), cap(s4))
 }
 
 func main() {
