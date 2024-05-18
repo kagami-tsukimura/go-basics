@@ -27,7 +27,6 @@ func main() {
 	modulePackage()
 
 	// variables
-
 	// var
 	var i int
 	fmt.Println(i)
