@@ -8,6 +8,16 @@ import (
 	"github.com/joho/godotenv"
 )
 
+const SECRET = "abc"
+
+type Os int
+
+const (
+	MAC Os = iota + 1
+	WINDOWS
+	LINUX
+)
+
 func modulePackage() {
 	// module, package
 	godotenv.Load()
@@ -63,6 +73,21 @@ func variables() {
 	y := 1.23
 	z := float64(x) + y
 	fmt.Printf("x: %v, y: %v, z: %v\n", x, y, z)
+	fmt.Println("----------")
+
+	// 定数
+	fmt.Printf("Mac: %v, Windows: %v, Linux: %v\n", MAC, WINDOWS, LINUX)
+	fmt.Println("----------")
+
+	// 変数の値を変更
+	// l = 1 → 2
+	fmt.Println(l)
+	l = 2
+	fmt.Println(l)
+	l += 1
+	fmt.Println(l)
+	l *= 2
+	fmt.Println(l)
 	fmt.Println("----------")
 
 }
