@@ -303,14 +303,19 @@ func slices() {
 
 	m2["A"] = 10
 	m2["B"] = 20
-	m2["C"] = 30
+	m2["C"] = 0
 	// len: 3, m2["A"] = 10
 	fmt.Printf("m2: %v, len: %v, m2['A']: %v\n", m2, len(m2), m2["A"])
-	fmt.Println("----------")
 	delete(m2, "A")
 	// len: 2, m2["A"] = 0
 	fmt.Printf("m2: %v, len: %v, m2['A']: %v\n", m2, len(m2), m2["A"])
 	fmt.Println("----------")
+
+	// 存在しない値の0と存在する値の0の区別
+	v, ok := m2["A"]
+	fmt.Printf("m2['A']_v: %v, ok: %v\n", v, ok)
+	v, ok = m2["C"]
+	fmt.Printf("m2['C']_v: %v, ok: %v\n", v, ok)
 
 }
 
