@@ -334,7 +334,8 @@ func slices() {
 
 func structs() {
 	// struct
-	fmt.Printf("Task: %v\n", Task{"Go", 10})
+	task1 := Task{Title: "Learning Golang", Estimate: 3}
+	fmt.Printf("Task: %v\n", task1)
 }
 
 func main() {
