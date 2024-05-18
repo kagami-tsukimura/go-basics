@@ -100,6 +100,8 @@ func variables() {
 
 func pointers() {
 	var ui1 uint16
+	// pointer: メモリ内の1byte番地
+	// 先頭アドレス
 	fmt.Printf("memory address og ui1: %p\n", &ui1)
 	fmt.Println("----------")
 }
