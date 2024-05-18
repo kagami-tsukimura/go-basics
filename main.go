@@ -230,13 +230,17 @@ func slices() {
 	s5 := make([]int, 4, 6)
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 
+	// s5: [0, 0, 0, 0]
+	// s6: [   0, 0   ]
+	// s5[1]とs5[2]がs6[0]s6[1]
 	s6 := s5[1:3]
 	s6[1] = 10
-	// s5[1] = 10になる
+	// s5[2] = 10になる
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s6, len(s6), cap(s6))
 
 	s6 = append(s6, 2)
+	// s5[3] = 2になる
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s6, len(s6), cap(s6))
 
