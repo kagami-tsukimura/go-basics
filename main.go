@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-basics/calculator"
 	"os"
+	"strings"
 	"unsafe"
 
 	"github.com/joho/godotenv"
@@ -399,12 +400,31 @@ func (task *Task) extendEstimateByPointer() {
 	task.Estimate += 10
 }
 
-func functions() {
+func funcDefer() {
 	// defer: 関数終了時に遅れて実行
 	// deferが複数: 下から上に実行
 	defer fmt.Println("defer func finally")   // 3
 	defer fmt.Println("defer func seminally") // 2
 	fmt.Println("Hello World")                // 1
+	fmt.Println("----------")
+}
+
+func trim(files ...string) []string {
+	// 要素数: 0, capacity: 可変長引数の数
+	out := make([]string, 0, len(files))
+	for _, f := range files {
+		// TrimSuffix: 第2引数にある値を末尾要素から取り除く
+		out = append(out, strings.TrimSuffix(f, "csv"))
+	}
+	return out
+
+}
+
+func functions() {
+	funcDefer()
+
+	files := []string{"file1.csv", "file2.csv", "file3.csv"}
+
 }
 
 func main() {
