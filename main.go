@@ -203,8 +203,12 @@ func slices() {
 	// 要素数が空の配列: slice
 	var s1 []int
 	s2 := []int{}
-	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
-	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s2, len(s2), cap(s2))
+	fmt.Printf("s1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
+	fmt.Printf("s2_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s2, len(s2), cap(s2))
+	// カーリーブラケットなし: nil
+	fmt.Println("s1 is nil?: ", s1 == nil)
+	// カーリーブラケットあり: not nil
+	fmt.Println("s2 is nil?: ", s2 == nil)
 }
 
 func main() {
