@@ -141,6 +141,17 @@ func pointers() {
 	**pp1 = 10
 	fmt.Printf("value of ui1: %v\n", ui1)
 
+	// 制御文
+	ok, result := true, "A"
+	if ok {
+		result = "OK"
+		println(result)
+	} else {
+		result = "NG"
+		println(result)
+	}
+	fmt.Printf("result: %v\n", result)
+
 	fmt.Println("----------")
 }
 
