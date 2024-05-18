@@ -414,16 +414,16 @@ func trim(files ...string) []string {
 	out := make([]string, 0, len(files))
 	for _, f := range files {
 		// TrimSuffix: 第2引数にある値を末尾要素から取り除く
-		out = append(out, strings.TrimSuffix(f, "csv"))
+		out = append(out, strings.TrimSuffix(f, ".csv"))
 	}
 	return out
-
 }
 
 func functions() {
 	funcDefer()
 
 	files := []string{"file1.csv", "file2.csv", "file3.csv"}
+	fmt.Printf("trim: %v\n", trim(files...))
 
 }
 
