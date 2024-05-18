@@ -263,6 +263,11 @@ func slices() {
 	fmt.Printf("s5 source of copy: %v %v %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6 dst copy after: %v %v %v\n", sc6, len(sc6), cap(sc6))
 
+	// copy後に値を書き換え
+	sc6[1] = 10
+	fmt.Printf("s5 source of copy: %v %v %v\n", s5, len(s5), cap(s5))
+	fmt.Printf("s6 dst rewrite after: %v %v %v\n", sc6, len(sc6), cap(sc6))
+
 	fmt.Println("----------")
 }
 
