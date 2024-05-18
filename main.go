@@ -183,10 +183,18 @@ func pointers() {
 	fmt.Println("----------")
 }
 
+func slices() {
+	var slice []int
+	fmt.Printf("slice: %v\n", slice)
+	slice = append(slice, 1, 2, 3, 4)
+	fmt.Printf("slice: %v\n", slice)
+}
+
 func main() {
 
 	// modulePackage()
 	// variables()
-	pointers()
+	// pointers()
+	slices()
 
 }
