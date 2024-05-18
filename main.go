@@ -25,4 +25,6 @@ func main() {
 	fmt.Println(i)
 	var j int = 2
 	fmt.Println(j)
+	var k = 4
+	fmt.Println(k)
 }
