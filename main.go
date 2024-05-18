@@ -213,6 +213,15 @@ func slices() {
 	// sliceに要素を追加
 	s1 = append(s1, 1, 2, 3)
 	fmt.Printf("s1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
+
+	// sliceにsliceを追加
+	s3 := []int{4, 5, 6}
+	s1 = append(s1, s3...)
+	fmt.Printf("s1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
+
+	// make: capacity確保
+	s4 := make([]int, 0, 2)
+	fmt.Printf("s4_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s4, len(s4), cap(s4))
 }
 
 func main() {
