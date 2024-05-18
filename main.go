@@ -33,6 +33,21 @@ type Task struct {
 	Estimate int
 }
 
+type controller interface {
+	speedUp() int
+	speedDown() int
+}
+
+type vehicle struct {
+	speed       int
+	enginePower int
+}
+
+type bycycle struct {
+	speed      int
+	humanPower int
+}
+
 func modulePackage() {
 	// module, package
 	godotenv.Load()
@@ -522,6 +537,6 @@ func main() {
 	// pointers()
 	// slices()
 	// structs()
-	functions()
+	// functions()
 
 }
