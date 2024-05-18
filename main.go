@@ -254,6 +254,7 @@ func slices() {
 	fmt.Println("----------")
 
 	// NOTE: メモリをコピーすると、メモリを共有しない
+	// capacity省略: lengthに基づいて自動計算
 	sc6 := make([]int, len(s5[1:3]))
 	fmt.Printf("s5 source of copy: %v %v %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6 dst copy before: %v %v %v\n", sc6, len(sc6), cap(sc6))
