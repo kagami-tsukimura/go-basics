@@ -196,6 +196,7 @@ func slices() {
 	fmt.Printf("len(a1), cap(a1): %v, %v\n", len(a1), cap(a1))
 	fmt.Printf("len(a2), cap(a2): %v, %v\n", len(a2), cap(a2))
 	fmt.Printf("len(a3), cap(a3): %v, %v\n", len(a3), cap(a3))
+	// 配列: 要素数を動的に変更不可、要素数の異なる配列は型も異なる
 	fmt.Printf("%T %T %T\n", a1, a2, a3)
 }
 
