@@ -184,10 +184,13 @@ func pointers() {
 }
 
 func slices() {
-	var slice []int
-	fmt.Printf("slice: %v\n", slice)
-	slice = append(slice, 1, 2, 3, 4)
-	fmt.Printf("slice: %v\n", slice)
+	var a1 [3]int
+	var a2 = [3]int{10, 20, 30}
+	// := 要素の値が必須
+	// [...] 要素数を自動で判定するため、要素数の指定が不要
+	a3 := [...]int{10, 20}
+	fmt.Println(a1, a2, a3)
+	fmt.Printf("%v %v %v\n", a1, a2, a3)
 }
 
 func main() {
