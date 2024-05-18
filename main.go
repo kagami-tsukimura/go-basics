@@ -109,6 +109,8 @@ func pointers() {
 	fmt.Printf("memory address og ui2: %p\n", &ui2)
 
 	// pointer変数: *<型>
+	// NOTE: pointer変数は型の宣言が必須
+	// NOTE: pointerで変数の先頭番地が分かり、型で長さが分かる
 	var p1 *uint16
 
 	fmt.Println("----------")
