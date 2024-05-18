@@ -146,7 +146,7 @@ func pointers() {
 
 	// 制御文
 	// スコープ内外で異なるメモリ番地
-	println("異なるメモリ番地")
+	println("異なるメモリ番地 -> ':='")
 	ok, result := true, "A"
 	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok {
@@ -166,7 +166,7 @@ func pointers() {
 	fmt.Println("----------")
 
 	// スコープ内外で同じメモリ番地
-	println("同じメモリ番地")
+	println("同じメモリ番地 -> '='")
 	ok2, result2 := true, "A"
 	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok2 {
