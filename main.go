@@ -8,7 +8,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func modulePackage() {
 	// module, package
 	godotenv.Load()
 	fmt.Println(os.Getenv("GO_ENV"))
@@ -21,6 +21,10 @@ func main() {
 	fmt.Printf("a + b + offset = %g\n", sumResultFloat)
 	fmt.Printf("(a * b) + offset = %g\n", calculator.Multiply(1, 2))
 	fmt.Println("----------")
+}
+
+func main() {
+	modulePackage()
 
 	// variables
 
@@ -52,6 +56,7 @@ func main() {
 	b := true
 	fmt.Printf("b: %v %T\n", b, b)
 
+	fmt.Println("----------")
 	pi, title := 3.14, "Go"
 	fmt.Printf("pi: %v, title: %v\n", pi, title)
 
