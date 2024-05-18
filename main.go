@@ -402,9 +402,9 @@ func (task *Task) extendEstimateByPointer() {
 func functions() {
 	// defer: 関数終了時に遅れて実行
 	// deferが複数: 下から上に実行
-	defer fmt.Println("defer func finally") // 3
-	defer fmt.Println("defer func 1")       // 2
-	fmt.Println("Hello World")              // 1
+	defer fmt.Println("defer func finally")   // 3
+	defer fmt.Println("defer func seminally") // 2
+	fmt.Println("Hello World")                // 1
 }
 
 func main() {
