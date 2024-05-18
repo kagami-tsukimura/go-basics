@@ -361,6 +361,10 @@ func structs() {
 	fmt.Printf("task1p: %p\n", &task1p)
 	// *で始まるデータ型: pointer変数の型
 	fmt.Printf("task1p: %T %+v %v\n", task1p, *task1p, unsafe.Sizeof(task1p))
+
+	// dereference
+	(*task1p).Title = "Changed Learning"
+	fmt.Printf("task1p: %v\n", *task1p)
 }
 
 func main() {
