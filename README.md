@@ -31,3 +31,13 @@ go build -o <バイナリ名> <ファイル名>
 ```bash
 go install honnef.co/go/tools/cmd/staticcheck@latest
 ```
+
+- settings.json の追記
+
+```json: settings.json
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
+  },
+  "gopls": { "ui.diagnostic.staticcheck": true }
+```
