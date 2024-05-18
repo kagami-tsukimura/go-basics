@@ -527,7 +527,6 @@ func functions() {
 		fmt.Printf("f4: %v\n", f4(i))
 	}
 	fmt.Println("----------")
-
 }
 
 func main() {
