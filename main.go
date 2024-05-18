@@ -440,6 +440,13 @@ func addExt(f func(file string) string, name string) {
 	fmt.Println(f(name))
 }
 
+// 無名関数をreturnする関数
+func multiply() func(int) int {
+	return func(n int) int {
+		return n * 1000
+	}
+}
+
 func functions() {
 	funcDefer()
 
@@ -478,6 +485,12 @@ func functions() {
 		return file + ".csv"
 	}
 	addExt(f2, trim(files...)[1])
+	fmt.Println("----------")
+
+	// f3: 戻り値の無名関数が格納
+	f3 := multiply()
+	fmt.Printf("f3: %v\n", f3(10))
+	fmt.Println("----------")
 
 }
 
