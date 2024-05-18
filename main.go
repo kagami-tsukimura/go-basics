@@ -202,7 +202,7 @@ func slices() {
 	// slice: 要素数を動的に変更可能
 	// 要素数が空の配列: slice
 	var s1 []int
-	s2 := []int{10, 20, 30, 40}
+	s2 := []int{}
 	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
 	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s2, len(s2), cap(s2))
 }
