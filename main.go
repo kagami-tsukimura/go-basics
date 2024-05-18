@@ -489,6 +489,7 @@ func functions() {
 
 	// f3: 戻り値の無名関数が格納
 	f3 := multiply()
+	// NOTE: 無名関数を呼び出し
 	fmt.Printf("f3: %v\n", f3(10))
 	fmt.Println("----------")
 
