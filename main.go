@@ -324,7 +324,6 @@ func slices() {
 	for k, v := range m2 {
 		fmt.Printf("k: %v, v: %v\n", k, v)
 	}
-
 	fmt.Println("----------")
 
 }
