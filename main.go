@@ -433,15 +433,17 @@ func fileChecker(name string) (string, error) {
 	return name, nil
 }
 
-// 無名関数を引数に持つ関数
-// 第1引数: 無名関数f、第2引数: name
 func addExt(f func(file string) string, name string) {
+	// 無名関数を引数に持つ関数
+	// 第1引数: 無名関数f、第2引数: name
+
 	// 第1引数の無名関数fに第2引数nameを渡して、無名関数を実行。戻り値を出力
 	fmt.Println(f(name))
 }
 
-// 無名関数をreturnする関数
 func multiply() func(int) int {
+	// 無名関数をreturnする関数
+
 	return func(n int) int {
 		return n * 1000
 	}
