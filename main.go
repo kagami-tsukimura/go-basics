@@ -41,4 +41,11 @@ func main() {
 	fmt.Printf("ui: %v %T\n", ui, ui)
 	fmt.Printf("i: %[1]v %[1]T ui: %[2]v %[2]T\n", i, ui)
 
+	f := 3.14
+	fmt.Printf("f: %v %T\n", f, f)
+	s := "hello"
+	fmt.Printf("s: %v %T\n", s, s)
+	b := true
+	fmt.Printf("b: %v %T\n", b, b)
+
 }
