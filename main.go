@@ -196,6 +196,7 @@ func slices() {
 	fmt.Printf("len(a1), cap(a1): %v, %v\n", len(a1), cap(a1))
 	fmt.Printf("len(a2), cap(a2): %v, %v\n", len(a2), cap(a2))
 	fmt.Printf("len(a3), cap(a3): %v, %v\n", len(a3), cap(a3))
+	fmt.Printf("%T %T %T\n", a1, a2, a3)
 }
 
 func main() {
