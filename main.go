@@ -378,6 +378,7 @@ func structs() {
 	fmt.Println("----------")
 
 	// 値が初期値（3）から変更されない
+	// タスクレシーバーはコピーの値を変更するため、元の値は変更なし
 	task1.extendEstimate()
 	fmt.Printf("task1 extendEstimate: %+v\n", task1.Estimate)
 }
