@@ -122,6 +122,7 @@ func pointers() {
 	fmt.Printf("size of p1: %d[bytes]\n", unsafe.Sizeof(p1))
 	// 先頭アドレス
 	fmt.Printf("memory address of p1: %p\n", &p1)
+	fmt.Printf("value of ui1(dereference): %v\n", *p1)
 
 	fmt.Println("----------")
 }
