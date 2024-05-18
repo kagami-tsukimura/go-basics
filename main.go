@@ -295,7 +295,9 @@ func slices() {
 	var m1 map[string]int
 	// := 空の{}で明示的に指定
 	m2 := map[string]int{}
+	// m1 == nil
 	fmt.Printf("m1: %v, %v\n", m1, m1 == nil)
+	// m2 != nil
 	fmt.Printf("m2: %v, %v\n", m2, m2 == nil)
 	fmt.Println("----------")
 
