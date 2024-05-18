@@ -13,12 +13,14 @@ func main() {
 	godotenv.Load()
 	fmt.Println(os.Getenv("GO_ENV"))
 	fmt.Println(calculator.Offset)
+	fmt.Println("----------")
 
 	sumResultNumber := calculator.Sum(1, 2)
 	sumResultFloat := calculator.Sum(1, 2.1)
 	fmt.Printf("a + b + offset = %g\n", sumResultNumber)
 	fmt.Printf("a + b + offset = %g\n", sumResultFloat)
 	fmt.Printf("(a * b) + offset = %g\n", calculator.Multiply(1, 2))
+	fmt.Println("----------")
 
 	// variables
 
@@ -30,6 +32,7 @@ func main() {
 	// 型推論
 	var k = 4
 	fmt.Println(k)
+	fmt.Println("----------")
 
 	// :=
 	l := 1
@@ -40,6 +43,7 @@ func main() {
 	// t: type
 	fmt.Printf("ui: %v %T\n", ui, ui)
 	fmt.Printf("i: %[1]v %[1]T ui: %[2]v %[2]T\n", i, ui)
+	fmt.Println("----------")
 
 	f := 3.14
 	fmt.Printf("f: %v %T\n", f, f)
