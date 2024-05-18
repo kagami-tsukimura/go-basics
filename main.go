@@ -448,6 +448,9 @@ func multiply() func(int) int {
 }
 
 func countUp() func(int) int {
+	// グローバル変数でも同じ挙動になるが、closureとして扱うことで関数内に閉じ込める
+	// →他の箇所から使えないようにする
+
 	count := 0
 	return func(n int) int {
 		count += n
