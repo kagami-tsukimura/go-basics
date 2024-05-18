@@ -144,7 +144,9 @@ func pointers() {
 	// 制御文
 	ok, result := true, "A"
 	if ok {
+		// := スコープ内でのみ有効
 		result := "OK"
+		// println("OK")
 		println(result)
 	} else {
 		result := "NG"
