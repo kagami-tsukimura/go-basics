@@ -25,6 +25,7 @@ func main() {
 	fmt.Println(i)
 	var j int = 2
 	fmt.Println(j)
+	// 型推論
 	var k = 4
 	fmt.Println(k)
 }
