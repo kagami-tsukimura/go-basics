@@ -137,6 +137,9 @@ func pointers() {
 	fmt.Printf("size of pp1: %d[bytes]\n", unsafe.Sizeof(pp1))
 	fmt.Printf("value of p1(dereference): %v\n", *pp1)
 	fmt.Printf("value of ui1(dereference): %v\n", **pp1)
+	// ui1の値を変更
+	**pp1 = 10
+	fmt.Printf("value of ui1: %v\n", ui1)
 
 	fmt.Println("----------")
 }
