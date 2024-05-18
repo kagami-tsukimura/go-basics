@@ -441,9 +441,11 @@ func functions() {
 	fmt.Printf("trim: %v\n", trim(files...))
 	fmt.Println("----------")
 
+	// targetFile := "main.go"
+	// name, err := fileChecker(targetFile)
 	name, err := fileChecker(trim(files...)[0])
 	if err != nil {
-		fmt.Printf("eror: %v\n", err)
+		fmt.Printf("error: %v\n", err)
 		return
 	}
 	fmt.Printf("name: %v\n", name)
