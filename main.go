@@ -25,6 +25,12 @@ var (
 	b bool
 )
 
+// struct: 構造体
+type Task struct {
+	Title    string
+	Estimate int
+}
+
 func modulePackage() {
 	// module, package
 	godotenv.Load()
@@ -96,7 +102,6 @@ func variables() {
 	l *= 2
 	fmt.Println(l)
 	fmt.Println("----------")
-
 }
 
 func pointers() {
@@ -325,7 +330,11 @@ func slices() {
 		fmt.Printf("k: %v, v: %v\n", k, v)
 	}
 	fmt.Println("----------")
+}
 
+func structs() {
+	// struct
+	fmt.Printf("Task: %v\n", Task{"Go", 10})
 }
 
 func main() {
@@ -333,6 +342,7 @@ func main() {
 	// modulePackage()
 	// variables()
 	// pointers()
-	slices()
+	// slices()
+	structs()
 
 }
