@@ -366,10 +366,13 @@ func structs() {
 	// dereference
 	// (*task1p).Title = "Changed Learning"
 	// 構造体のフィールドにdeterence: *を省略可
-	(*task1p).Title = "Changed Learning"
+	task1p.Title = "Changed Learning by Task1"
 	fmt.Printf("task1p: %v\n", *task1p)
 	fmt.Println("----------")
 
+	var task2p *Task = task1p
+	task1p.Title = "Changed Learning by Task2"
+	fmt.Printf("task2p: %v\n", task2p)
 	fmt.Println("----------")
 }
 
