@@ -142,11 +142,13 @@ func pointers() {
 	fmt.Printf("value of ui1: %v\n", ui1)
 
 	// 制御文
+	// スコープ内外で異なるメモリ番地
 	ok, result := true, "A"
 	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok {
 		// := スコープ内でのみ有効
 		result := "OK"
+		// メモリ番地も異なる
 		fmt.Printf("memory address of result(in scope): %p\n", &result)
 		// println("OK")
 		println(result)
