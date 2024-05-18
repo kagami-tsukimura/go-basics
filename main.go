@@ -236,6 +236,10 @@ func slices() {
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s6, len(s6), cap(s6))
 
+	s6 = append(s6, 2)
+	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
+	fmt.Printf("s6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s6, len(s6), cap(s6))
+
 }
 
 func main() {
