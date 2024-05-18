@@ -25,3 +25,24 @@ go build -o <バイナリ名> <ファイル名>
 ```bash
 ./<バイナリ名>
 ```
+
+- staticcheck の適用
+
+```bash
+go install honnef.co/go/tools/cmd/staticcheck@latest
+```
+
+- settings.json の追記
+
+```json: settings.json
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
+  },
+  "gopls": { "ui.diagnostic.staticcheck": true }
+```
+
+## 言語仕様
+
+- 小文字の変数や関数: パッケージ内でのみ使用可能(Private)
+- 大文字の変数や関数: 外部パッケージでも使用可能(Public)

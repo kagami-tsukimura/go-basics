@@ -1,11 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-basics/calculator"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
-	sl := []int{1, 2, 3}
-	if len(sl) > 1 {
-		fmt.Println("Got multiple list!")
-	}
+	godotenv.Load()
+	fmt.Println(os.Getenv("GO_ENV"))
+	fmt.Println(calculator.Offset)
+
+	sumResultNumber := calculator.Sum(1, 2)
+	sumResultFloat := calculator.Sum(1, 2.1)
+	fmt.Printf("a + b + offset = %g\n", sumResultNumber)
+	fmt.Printf("a + b + offset = %g\n", sumResultFloat)
+
+	fmt.Printf("(a * b) + offset = %g\n", calculator.Multiply(1, 2))
 }
