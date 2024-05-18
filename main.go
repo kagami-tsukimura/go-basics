@@ -22,5 +22,7 @@ func main() {
 
 	// variables
 	var i int
-	j := 1
+	fmt.Println(i)
+	var j int = 2
+	fmt.Println(j)
 }
