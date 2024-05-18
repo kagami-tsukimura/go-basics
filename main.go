@@ -36,6 +36,8 @@ func main() {
 	fmt.Println(l)
 	fmt.Printf("i: %v %T\n", i, i)
 	ui := uint16(6)
+	// v: value
+	// t: type
 	fmt.Printf("ui: %v %T\n", ui, ui)
 	fmt.Printf("i: %[1]v %[1]T ui: %[2]v %[2]T\n", i, ui)
 
