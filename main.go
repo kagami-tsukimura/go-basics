@@ -232,6 +232,7 @@ func slices() {
 
 	s6 := s5[1:3]
 	s6[1] = 10
+	// s5[1] = 10になる
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("s6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s6, len(s6), cap(s6))
 
