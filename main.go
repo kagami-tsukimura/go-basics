@@ -230,6 +230,7 @@ func slices() {
 	s5 := make([]int, 4, 6)
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 
+	// NOTE: メモリを切り取ると、メモリを共有する
 	// s5: [0, 0, 0, 0]
 	// s6: [   0, 0   ]
 	// s5[1]とs5[2]がs6[0]s6[1]
