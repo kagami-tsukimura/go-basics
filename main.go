@@ -108,6 +108,9 @@ func pointers() {
 	// 先頭アドレス
 	fmt.Printf("memory address og ui2: %p\n", &ui2)
 
+	// pointer変数: *<型>
+	var p1 *uint16
+
 	fmt.Println("----------")
 }
 
