@@ -447,6 +447,14 @@ func multiply() func(int) int {
 	}
 }
 
+func countUp() func(int) int {
+	count := 0
+	return func(n int) int {
+		count += n
+		return count
+	}
+}
+
 func functions() {
 	funcDefer()
 
@@ -491,6 +499,12 @@ func functions() {
 	f3 := multiply()
 	// NOTE: 無名関数を呼び出し
 	fmt.Printf("f3: %v\n", f3(10))
+	fmt.Println("----------")
+
+	f4 := countUp()
+	// NOTE: 無名関数を呼び出し
+	fmt.Printf("f4: %v\n", f4(10))
+	fmt.Printf("f4: %v\n", f4(10))
 	fmt.Println("----------")
 
 }
