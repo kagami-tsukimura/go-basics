@@ -135,6 +135,8 @@ func pointers() {
 	fmt.Printf("value of pp1: %v\n", pp1)
 	fmt.Printf("value of *pp1: %v\n", *pp1)
 	fmt.Printf("size of pp1: %d[bytes]\n", unsafe.Sizeof(pp1))
+	fmt.Printf("value of p1(dereference): %v\n", *pp1)
+	fmt.Printf("value of ui1(dereference): %v\n", **pp1)
 
 	fmt.Println("----------")
 }
