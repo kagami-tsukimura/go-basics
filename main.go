@@ -271,8 +271,16 @@ func slices() {
 	fmt.Println("----------")
 
 	s5 = make([]int, 4, 6)
-	// [1:3:3]指定値(3)-1までメモリ共有
+	// [1:3:3]指定値(3)-1のインデックスまでメモリ共有
 	fs6 := s5[1:3:3]
+	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
+	fmt.Printf("fs6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", fs6, len(fs6), cap(fs6))
+
+	fs6[0] = 6
+	fs6[1] = 7
+	fs6 = append(fs6, 8)
+	// s5[1]: 6, s5[2]: 7,
+	// s5[3]: 0 (メモリ共有はインデックス2までのため、共有されない)
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("fs6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", fs6, len(fs6), cap(fs6))
 	fmt.Println("----------")
