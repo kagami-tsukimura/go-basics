@@ -434,8 +434,9 @@ func fileChecker(name string) (string, error) {
 }
 
 // 無名関数を引数に持つ関数
-// 第一引数: 無名関数、第二引数: name
+// 第1引数: 無名関数f、第2引数: name
 func addExt(f func(file string) string, name string) {
+	// 第1引数の無名関数fに第2引数nameを渡して、無名関数を実行。戻り値を出力
 	fmt.Println(f(name))
 }
 
