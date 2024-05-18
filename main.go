@@ -143,12 +143,12 @@ func pointers() {
 
 	// 制御文
 	ok, result := true, "A"
-	fmt.Printf("memory address of result: %p\n", &result)
+	fmt.Printf("memory address of result(out scope): %p\n", &result)
 	if ok {
 		// := スコープ内でのみ有効
 		result := "OK"
 		// println("OK")
-		fmt.Printf("memory address of result: %p\n", &result)
+		fmt.Printf("memory address of result(in scope): %p\n", &result)
 		println(result)
 	} else {
 		result := "NG"
