@@ -340,6 +340,11 @@ func structs() {
 	}
 	task1.Title = "Learning Go"
 	fmt.Printf("Task: %v\n", task1)
+	// %+v: 構造体のフィールド名も追加で出力
+	fmt.Printf("Task: %+v\n", task1)
+	fmt.Printf("Task: %+v\n", task1)
+
+	fmt.Println("----------")
 }
 
 func main() {
