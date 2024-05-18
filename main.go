@@ -372,7 +372,9 @@ func structs() {
 
 	var task2p *Task = task1p
 	task1p.Title = "Changed Learning by Task2"
-	fmt.Printf("task2p: %v\n", task2p)
+	// dereference
+	fmt.Printf("task1p: %+v\n", task1p)
+	fmt.Printf("task2p: %+v\n", task2p)
 	fmt.Println("----------")
 }
 
