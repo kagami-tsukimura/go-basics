@@ -318,8 +318,14 @@ func slices() {
 	// 存在する: true
 	v, ok = m2["C"]
 	fmt.Printf("m2['C']_v: %v, ok: %v\n", v, ok)
+	fmt.Println("----------")
 
 	// mapの取り出し(ループ処理)
+	for k, v := range m2 {
+		fmt.Printf("k: %v, v: %v\n", k, v)
+	}
+
+	fmt.Println("----------")
 
 }
 
