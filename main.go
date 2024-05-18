@@ -225,6 +225,10 @@ func slices() {
 	// capacityを超えた追加も可能
 	s4 = append(s4, 1, 2, 3, 4)
 	fmt.Printf("s4_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s4, len(s4), cap(s4))
+
+	s5 := make([]int, 4, 6)
+	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
+
 }
 
 func main() {
