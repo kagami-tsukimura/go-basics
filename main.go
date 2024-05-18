@@ -290,6 +290,15 @@ func slices() {
 	fmt.Printf("s5_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s5, len(s5), cap(s5))
 	fmt.Printf("fs6_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", fs6, len(fs6), cap(fs6))
 	fmt.Println("----------")
+
+	// map(key: string, value: int)
+	var m1 map[string]int
+	// := 空の{}で明示的に指定
+	m2 := map[string]int{}
+	fmt.Printf("m1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", m1, len(m1), cap(m1))
+	fmt.Printf("m2_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", m2, len(m2), cap(m2))
+	fmt.Println("----------")
+
 }
 
 func main() {
