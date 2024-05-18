@@ -25,3 +25,9 @@ go build -o <バイナリ名> <ファイル名>
 ```bash
 ./<バイナリ名>
 ```
+
+- staticcheck の適用
+
+```bash
+go install honnef.co/go/tools/cmd/staticcheck@latest
+```
