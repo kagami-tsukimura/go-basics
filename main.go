@@ -376,6 +376,10 @@ func structs() {
 	fmt.Printf("task1p: %+v\n", task1p)
 	fmt.Printf("task2p: %+v\n", task2p)
 	fmt.Println("----------")
+
+	// 値が初期値（3）から変更されない
+	task1.extendEstimate()
+	fmt.Printf("task1 extendEstimate: %+v\n", task1.Estimate)
 }
 
 func (task Task) extendEstimate() {
