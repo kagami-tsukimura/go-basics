@@ -384,7 +384,9 @@ func structs() {
 	// pointer receiverで元の値を変更する
 	fmt.Printf("task1 before: %+v\n", task1.Estimate)
 	// 先頭アドレス取得
-	(&task1).extendEstimateByPointer()
+	// (&task1).extendEstimateByPointer()
+	// 自動でpointer変換して取得
+	task1.extendEstimateByPointer()
 	fmt.Printf("task1 extendEstimateByPointer: %+v\n", task1.Estimate)
 	fmt.Println("----------")
 }
