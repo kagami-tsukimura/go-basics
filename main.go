@@ -152,6 +152,7 @@ func pointers() {
 		result := "NG"
 		println(result)
 	}
+	// "OK"のスコープ外のため、"A"
 	// fmt.Printf("result: %v\n", "A")
 	fmt.Printf("result: %v\n", result)
 
