@@ -198,6 +198,13 @@ func slices() {
 	fmt.Printf("len(a3), cap(a3): %v, %v\n", len(a3), cap(a3))
 	// 配列: 要素数を動的に変更不可、要素数の異なる配列は型も異なる
 	fmt.Printf("%T %T %T\n", a1, a2, a3)
+
+	// slice: 要素数を動的に変更可能
+	// 要素数が空の配列: slice
+	var s1 []int
+	s2 := []int{10, 20, 30, 40}
+	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s1, len(s1), cap(s1))
+	fmt.Printf("type: %[1]T, value: %[1]v, len: %v, cap: %v\n", s2, len(s2), cap(s2))
 }
 
 func main() {
