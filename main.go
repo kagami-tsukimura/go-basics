@@ -343,8 +343,11 @@ func structs() {
 	// %+v: 構造体のフィールド名も追加で出力
 	fmt.Printf("Task: %+v\n", task1)
 	fmt.Printf("Task: %[1]T: %[1]v, [%v]\n", task1, task1.Title)
-
 	fmt.Println("----------")
+
+	var task2 Task = task1
+	task2.Title = "new"
+	fmt.Printf("task1: %v, task2: %v\n", task1.Title, task2.Title)
 }
 
 func main() {
