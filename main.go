@@ -13,7 +13,7 @@ func main() {
 	fmt.Println(os.Getenv("GO_ENV"))
 	fmt.Println(calculator.Offset)
 
-	sumResult := fmt.Sprintf("a + b + offset = %f", calculator.Sum(1, 2))
+	sumResult := calculator.Sum(1, 2.1)
+	fmt.Printf("a + b + offset = %g\n", sumResult)
 
-	fmt.Println(sumResult)
 }
