@@ -457,12 +457,21 @@ func functions() {
 	func(i int) {
 		fmt.Printf("i: %v\n", i)
 	}(i)
+	fmt.Println("----------")
 
+	// 無名関数を代入
 	f1 := func(i int) int {
 		return i + 1
 	}
 	// NOTE: 後から無名関数を呼び出し: 変数に格納してから呼び出し
 	fmt.Printf("f1: %v\n", f1(1))
+	fmt.Println("----------")
+
+	f2 := func(file string) string {
+		return file + ".csv"
+	}
+
+	fmt.Printf("f2: %v\n", f2("file1"))
 
 }
 
