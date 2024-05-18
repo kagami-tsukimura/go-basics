@@ -58,6 +58,13 @@ func variables() {
 	fmt.Printf("pi: %v, title: %v\n", pi, title)
 	fmt.Println("----------")
 
+	// 型変換
+	x := 10
+	y := 1.23
+	z := float64(x) + y
+	fmt.Printf("x: %v, y: %v, z: %v\n", x, y, z)
+	fmt.Println("----------")
+
 }
 
 func main() {
