@@ -357,6 +357,7 @@ func structs() {
 		Estimate: 2,
 	}
 	fmt.Printf("task1p: %v\n", task1p)
+	// アドレス表示
 	fmt.Printf("task1p: %p\n", &task1p)
 }
 
