@@ -120,6 +120,7 @@ func pointers() {
 	p1 = &ui1
 	fmt.Printf("value of p1: %v\n", p1)
 	fmt.Printf("size of p1: %d[bytes]\n", unsafe.Sizeof(p1))
+	// 先頭アドレス
 	fmt.Printf("memory address of p1: %p\n", &p1)
 
 	fmt.Println("----------")
