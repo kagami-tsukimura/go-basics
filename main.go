@@ -377,14 +377,20 @@ func structs() {
 	fmt.Printf("task2p: %+v\n", task2p)
 	fmt.Println("----------")
 
-	// 値が初期値（3）から変更されない
-	// task receiverはコピーの値を変更するため、元の値は変更なし
+	// // 値が初期値（3）から変更されない
+	// // task receiverはコピーの値を変更するため、元の値は変更なし
+	// task1.extendEstimate()
+	// fmt.Printf("task1 extendEstimate: %+v\n", task1.Estimate)
 	// pointer receiverで元の値を変更する
-	task1.extendEstimate()
+	task1.extendEstimateByPointer()
 	fmt.Printf("task1 extendEstimate: %+v\n", task1.Estimate)
 }
 
-func (task Task) extendEstimate() {
+// func (task Task) extendEstimate() {
+// 	task.Estimate += 10
+// }
+
+func (task *Task) extendEstimateByPointer() {
 	task.Estimate += 10
 }
 
