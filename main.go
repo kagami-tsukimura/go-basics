@@ -112,6 +112,12 @@ func pointers() {
 	// NOTE: pointer変数は型の宣言が必須
 	// NOTE: pointerで変数の先頭番地が分かり、型で長さが分かる
 	var p1 *uint16
+	// NIL
+	fmt.Printf("value of p1: %v\n", p1)
+	// ui1のアドレス情報をp1に代入
+	fmt.Println("Assign ui1 address information to p1")
+	p1 = &ui1
+	fmt.Printf("value of p1: %v\n", p1)
 
 	fmt.Println("----------")
 }
