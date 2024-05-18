@@ -160,6 +160,20 @@ func pointers() {
 	// fmt.Printf("result: %v\n", "A")
 	fmt.Printf("result: %v\n", result)
 
+	// スコープ内外で同じメモリ番地
+	ok2, result2 := true, "A"
+	fmt.Printf("memory address of result(out scope): %p\n", &result)
+	if ok2 {
+		// = コロンを外すと、同じメモリ番地
+		result2 = "OK"
+		fmt.Printf("memory address of result(in scope): %p\n", &result)
+		println(result2)
+	} else {
+		result2 = "NG"
+		println(result2)
+	}
+	fmt.Printf("result2: %v\n", result2)
+
 	fmt.Println("----------")
 }
 
