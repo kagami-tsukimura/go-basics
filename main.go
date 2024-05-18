@@ -451,6 +451,19 @@ func functions() {
 	fmt.Printf("name: %v\n", name)
 	fmt.Println("----------")
 
+	i := 1
+	// 無名関数
+	// NOTE: 無名関数の終わりに(i): 無名関数を呼び出し
+	func(i int) {
+		fmt.Printf("i: %v\n", i)
+	}(i)
+
+	f1 := func(i int) int {
+		return i + 1
+	}
+	// NOTE: 後から無名関数を呼び出し: 変数に格納してから呼び出し
+	fmt.Printf("f1: %v\n", f1(1))
+
 }
 
 func main() {
