@@ -295,8 +295,8 @@ func slices() {
 	var m1 map[string]int
 	// := 空の{}で明示的に指定
 	m2 := map[string]int{}
-	fmt.Printf("m1_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", m1, len(m1), cap(m1))
-	fmt.Printf("m2_type: %[1]T, value: %[1]v, len: %v, cap: %v\n", m2, len(m2), cap(m2))
+	fmt.Printf("m1: %v, %v\n", m1, m1 == nil)
+	fmt.Printf("m2: %v, %v\n", m2, m2 == nil)
 	fmt.Println("----------")
 
 }
