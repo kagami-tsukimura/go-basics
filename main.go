@@ -23,10 +23,7 @@ func modulePackage() {
 	fmt.Println("----------")
 }
 
-func main() {
-
-	// modulePackage()
-
+func variables() {
 	// variables
 	// var
 	var i int
@@ -59,5 +56,11 @@ func main() {
 	fmt.Println("----------")
 	pi, title := 3.14, "Go"
 	fmt.Printf("pi: %v, title: %v\n", pi, title)
+}
+
+func main() {
+
+	// modulePackage()
+	variables()
 
 }
