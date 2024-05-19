@@ -565,6 +565,7 @@ func interfaces() {
 		speed:       0,
 		enginePower: 10,
 	}
+	// v: speedUp, speedDownのメソッド実装済のため、controllerのinterfaceを満たすとみなされる
 	speedUpDown(v)
 	fmt.Println("----------")
 }
