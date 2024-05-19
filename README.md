@@ -77,3 +77,9 @@ go test -v -cover -coverprofile=coverage.out ./tests
 ```bash
 go tool cover -html=coverage.out
 ```
+
+## trace.out
+
+```bash
+go tool trace trace.out
+```
