@@ -24,6 +24,14 @@ func min[T constraints.Ordered](x, y T) T {
 	return y
 }
 
+func sumValues[K int | string, V constraints.Float | constraints.Integer](m map[K]V) V {
+	var sum V
+	for _, v := range m {
+		sum += v
+	}
+	return sum
+}
+
 func Generics() {
 	fmt.Printf("%v\n", add(1, 2))
 	fmt.Printf("%v\n", add(1.1, 2.1))
@@ -48,5 +56,6 @@ func Generics() {
 		3: 7.89,
 	}
 
-	fmt.Printf("%v %v\n", m1, m2)
+	fmt.Printf("%v\n", sumValues(m1))
+	fmt.Printf("%v\n", sumValues(m2))
 }
