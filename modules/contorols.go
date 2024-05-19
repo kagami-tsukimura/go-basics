@@ -43,7 +43,7 @@ func printForInfBreak(val int, thr int) {
 }
 
 func printForSwitch(val int) {
-	// loop: switch内のbreakでfor loopを抜けられるように明示
+	// loop: switch内のbreakでfor loopを抜けられるように命名
 loop:
 	for i := 0; i < val; i++ {
 		switch i {
