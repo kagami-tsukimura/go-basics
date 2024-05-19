@@ -1,6 +1,9 @@
 package modules
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func printIf(val int) {
 	if val == 0 {
@@ -20,6 +23,13 @@ func printFor(val int) {
 	fmt.Println("----------")
 }
 
+func printForInf() {
+	for {
+		fmt.Println("infinite loop")
+		time.Sleep(2 * time.Second)
+	}
+}
+
 func Controls() {
 	a := 0
 	printIf(a)
@@ -30,6 +40,7 @@ func Controls() {
 
 	d := 10
 	printFor(d)
+	printForInf()
 
 	fmt.Println("----------")
 }
