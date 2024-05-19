@@ -1,7 +1,8 @@
 package threadings
 
-import "fmt"
-
 func Channels() {
-	fmt.Println("Channels")
+	// // deadlock
+	// ch := make(chan int)
+	// ch <- 10
+	// fmt.Println(<-ch)
 }
