@@ -36,5 +36,7 @@ func Errors() {
 	// %w: ErrCustomにテキスト追加
 	err2 := fmt.Errorf("in repository layer: %w", ErrCustom)
 	fmt.Println(err2)
+	err2 = fmt.Errorf("in service layer: %w", err2)
+	fmt.Println(err2)
 
 }
