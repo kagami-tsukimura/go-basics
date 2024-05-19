@@ -561,6 +561,7 @@ func (v vehicle) String() string {
 }
 
 func checkType(i any) {
+	// 型判定
 	switch i.(type) {
 	case nil:
 		fmt.Println("i is nil")
