@@ -555,6 +555,8 @@ func speedUpDown(c controller) {
 }
 
 func (v vehicle) String() string {
+	// v(値レシーバー)のにvehicleにString()追加
+	// Sprintf: formatした値をStringとして返す。→標準出力しない
 	return fmt.Sprintf("Vehicle currnet speed: %v, enginePower: %v", v.speed, v.enginePower)
 }
 
