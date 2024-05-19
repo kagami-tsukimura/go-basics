@@ -46,6 +46,9 @@ func Errors() {
 		fmt.Println("matched")
 	}
 
+	err3 := fileCheck("test.txt")
+	fmt.Println(err3)
+
 }
 
 func fileCheck(name string) error {
