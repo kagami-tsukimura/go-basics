@@ -19,5 +19,7 @@ func Generics() {
 	fmt.Printf("%v\n", add("file", ".txt"))
 	// bool型はcustomConstraintsに定義されていないためエラー
 	// fmt.Printf("%v\n", add(true, false))
+	var i1, i2 NewInt = 3, 4
+	fmt.Printf("%v\n", add(i1, i2))
 	fmt.Println("----------")
 }
