@@ -25,6 +25,7 @@ func Channels() {
 
 	// goroutine leak
 	ch1 := make(chan int)
+	// goroutine leak: メモリが開放されていない
 	go func() {
 		fmt.Println(<-ch1)
 	}()
