@@ -10,6 +10,7 @@ func Channels() {
 	// ch := make(chan int)
 	// ch <- 10
 	// fmt.Println(<-ch)
+
 	ch := make(chan int)
 	var wg sync.WaitGroup
 	wg.Add(1)
