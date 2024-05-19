@@ -17,6 +17,7 @@ func main() {
 	// modules.Errors()
 	// modules.Generics()
 	// tests.UnitTest()
-	modules.Logs()
+	// modules.Logs()
+	modules.Runtimes()
 
 }
