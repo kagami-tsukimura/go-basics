@@ -560,6 +560,21 @@ func (v vehicle) String() string {
 	return fmt.Sprintf("Vehicle currnet speed: %v, enginePower: %v", v.speed, v.enginePower)
 }
 
+func checkType(i any) {
+	switch i.(type) {
+	case nil:
+		fmt.Println("i is nil")
+	case int:
+		fmt.Println("i is int")
+	case string:
+		fmt.Println("i is string")
+	case bool:
+		fmt.Println("i is bool")
+	default:
+		fmt.Println("i is unknown")
+	}
+}
+
 func interfaces() {
 	// var v vehicle
 	// v.speed = 50
@@ -582,6 +597,16 @@ func interfaces() {
 	speedUpDown(b)
 	fmt.Println("----------")
 	fmt.Println(v)
+	fmt.Println("----------")
+
+	var i1 interface{}
+	// any: interface{}と同様(別名)
+	var i2 any
+	checkType(i1)
+	checkType(i2)
+	checkType(v)
+	checkType(v.speed)
+	checkType(v.enginePower)
 }
 
 func main() {
