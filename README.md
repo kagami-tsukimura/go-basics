@@ -52,3 +52,28 @@ go install honnef.co/go/tools/cmd/staticcheck@latest
 ```bash
 go mod tidy
 ```
+
+## unittest
+
+- 関数を作成し、右クリックから`GO: Generates Unit Tests For Function`を実行。
+- // TODO: Add test cases.にテストケースを追加。
+  - name, args, want にテストケースを追加。
+- `go test`でテスト実行。
+
+```bash
+go test -v <ディレクトリ名>
+go test -v ./tests
+```
+
+- カバレッジ実行。
+
+```bash
+go test -v -cover -coverprofile=coverage.out <ディレクトリ名>
+go test -v -cover -coverprofile=coverage.out ./tests
+```
+
+- カバレッジ確認。
+
+```bash
+go tool cover -html=coverage.out
+```
