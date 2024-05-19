@@ -12,6 +12,7 @@ func main() {
 	// modules.Functions()
 	// modules.Interfaces()
 	// modules.Controls()
-	modules.Errors()
+	// modules.Errors()
+	modules.Generics()
 
 }
