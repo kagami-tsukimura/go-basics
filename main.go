@@ -610,6 +610,14 @@ func interfaces() {
 
 	checkType(i1)
 	checkType(i2)
+	i2 = 1
+	checkType(i2)
+	i2 = "hello"
+	checkType(i2)
+	i2 = true
+	checkType(i2)
+	fmt.Println("----------")
+
 	checkType(v)
 	checkType(v.speed)
 	checkType(v.enginePower)
