@@ -13,8 +13,12 @@ func printIf(a int) {
 }
 
 func Controls() {
-	a := -1
+	a := 0
 	printIf(a)
+	b := 1
+	printIf(b)
+	c := -1
+	printIf(c)
 
 	fmt.Println("----------")
 }
