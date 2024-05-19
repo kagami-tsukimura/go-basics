@@ -20,6 +20,7 @@ func main() {
 	// modules.Logs()
 
 	// threadings.Runtimes()
-	threadings.Goroutines()
+	// threadings.Goroutines()
+	threadings.Tracers()
 
 }
