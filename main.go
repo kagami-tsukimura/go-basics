@@ -534,7 +534,7 @@ func (v *vehicle) speedUp() int {
 	return v.speed
 }
 
-func (v *vehicle) speedDonw() int {
+func (v *vehicle) speedDown() int {
 	v.speed -= 5 * v.enginePower
 	return v.speed
 }
@@ -549,6 +549,15 @@ func (b *bycycle) speedDonw() int {
 	return b.speed
 }
 
+func interfaces() {
+	var v vehicle
+	v.speed = 50
+	v.enginePower = 10
+	fmt.Printf("speedUp: %v\n", v.speedUp())
+	fmt.Printf("speedDown: %v\n", v.speedDown())
+	fmt.Printf("speedUp: %v\n", v.speedUp())
+}
+
 func main() {
 
 	// modulePackage()
@@ -557,5 +566,6 @@ func main() {
 	// slices()
 	// structs()
 	// functions()
+	interfaces()
 
 }
