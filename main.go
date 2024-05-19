@@ -544,7 +544,7 @@ func (b *bycycle) speedUp() int {
 	return b.speed
 }
 
-func (b *bycycle) speedDonw() int {
+func (b *bycycle) speedDown() int {
 	b.speed -= 5 * b.humanPower
 	return b.speed
 }
@@ -568,6 +568,12 @@ func interfaces() {
 	// v: speedUp, speedDownのメソッド実装済のため、controllerのinterfaceを満たすとみなされる
 	speedUpDown(v)
 	fmt.Println("----------")
+
+	b := &bycycle{
+		speed:      0,
+		humanPower: 5,
+	}
+	speedUpDown(b)
 }
 
 func main() {
