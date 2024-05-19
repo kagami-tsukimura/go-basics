@@ -18,6 +18,8 @@ func main() {
 	// modules.Generics()
 	// tests.UnitTest()
 	// modules.Logs()
-	threadings.Runtimes()
+
+	// threadings.Runtimes()
+	threadings.Goroutines()
 
 }
