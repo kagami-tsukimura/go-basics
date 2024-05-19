@@ -106,6 +106,4 @@ func Controls() {
 	}
 
 	printForRange(items)
-
-	fmt.Println("----------")
 }
