@@ -20,11 +20,17 @@ func mkDir(dir string) {
 	}
 }
 
-func Logs() {
-	mkDir("logger")
-	file, err := os.Create("logger/log.txt")
+func createLogFile(filePath string) {
+	file, err := os.Create(filePath)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
 	defer file.Close()
+}
+
+func Logs() {
+	logDir := "logger"
+	filePath := logDir + "/log.txt"
+	mkDir(logDir)
+	createLogFile(filePath)
 }
