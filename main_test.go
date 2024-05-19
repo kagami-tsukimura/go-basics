@@ -10,6 +10,6 @@ import (
 func TestLeak(t *testing.T) {
 	// goroutine leakのテスト
 	defer goleak.VerifyNone(t)
-	// 関数を直接呼び出す
+	// goroutine leakしている関数を直接呼び出す
 	threadings.Channels()
 }
