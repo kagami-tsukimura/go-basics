@@ -3,8 +3,11 @@ package modules
 import "fmt"
 
 type customConstraints interface {
-	int | int16 | float32 | float64 | string
+	// 独自の型: ~を付加すると含まれる
+	~int | int16 | float32 | float64 | string
 }
+
+type NewInt int
 
 func add[T customConstraints](x, y T) T {
 	return x + y
