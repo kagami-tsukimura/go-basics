@@ -40,4 +40,9 @@ func Errors() {
 	err2 = fmt.Errorf("in service layer: %w", err2)
 	fmt.Println(err2)
 
+	// err2を自動でUnwrapして、ErrCustomに一致しているか1つずつ確認
+	if errors.Is(err2, ErrCustom) {
+		fmt.Println("matched")
+	}
+
 }
