@@ -549,13 +549,16 @@ func (b *bycycle) speedDonw() int {
 	return b.speed
 }
 
+func speedUpDown(c controller) {
+	fmt.Printf(("current speed: %v\n"), c.speedUp())
+	fmt.Printf(("current speed: %v\n"), c.speedDown())
+}
+
 func interfaces() {
 	var v vehicle
 	v.speed = 50
 	v.enginePower = 10
-	fmt.Printf("speedUp: %v\n", v.speedUp())
-	fmt.Printf("speedDown: %v\n", v.speedDown())
-	fmt.Printf("speedUp: %v\n", v.speedUp())
+	speedUpDown(&v)
 }
 
 func main() {
