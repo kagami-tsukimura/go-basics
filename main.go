@@ -559,7 +559,7 @@ func interfaces() {
 	// v.speed = 50
 	// v.enginePower = 10
 	v := &vehicle{
-		speed:       50,
+		speed:       0,
 		enginePower: 10,
 	}
 	speedUpDown(v)
