@@ -32,10 +32,18 @@ func Tracers() {
 	defer t.End()
 	fmt.Println("The number of logical CPU Cores:", runtime.NumCPU())
 
-	// 逐次処理
-	task(ctx, "Task1")
-	task(ctx, "Task2")
-	task(ctx, "Task3")
+	// // 逐次処理
+	// task(ctx, "Task1")
+	// task(ctx, "Task2")
+	// task(ctx, "Task3")
+
+	// goroutine
+	var wg sync.WaitGroup
+	wg.Add(3)
+	cTask(ctx, &wg, "Task1")
+	cTask(ctx, &wg, "Task2")
+	cTask(ctx, &wg, "Task3")
+	wg.Wait()
 
 }
 
