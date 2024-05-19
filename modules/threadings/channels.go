@@ -40,4 +40,8 @@ func Channels() {
 	ch2 <- 2
 	fmt.Println(<-ch2)
 
+	// ch3 := make(chan int, 1)
+	// // 書き込む前に読み込み: コードが停止してdeadlock
+	// fmt.Println(<-ch3)
+	// ch3 <- 3
 }
