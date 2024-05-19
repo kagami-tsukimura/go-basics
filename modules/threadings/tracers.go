@@ -45,6 +45,18 @@ func Tracers() {
 	cTask(ctx, &wg, "Task3")
 	wg.Wait()
 
+	s := []int{1, 2, 3}
+	for _, i := range s {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			fmt.Println(i)
+		}(i)
+	}
+	wg.Wait()
+
+	fmt.Println("func finished")
+
 }
 
 func task(ctx context.Context, name string) {
