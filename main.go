@@ -580,6 +580,8 @@ func interfaces() {
 		humanPower: 5,
 	}
 	speedUpDown(b)
+	fmt.Println("----------")
+	fmt.Println(v)
 }
 
 func main() {
