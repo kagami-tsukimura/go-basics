@@ -26,6 +26,7 @@ func Errors() {
 	err1 := fmt.Errorf("add info: %v", errors.New("origin error"))
 	fmt.Println(err1)
 	fmt.Printf("type: %[1]T\n", err1)
+	// 引数にUnwrapしていないメソッド: nil
 	fmt.Println(errors.Unwrap(err1))
 
 }
