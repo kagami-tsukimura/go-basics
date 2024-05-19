@@ -555,10 +555,14 @@ func speedUpDown(c controller) {
 }
 
 func interfaces() {
-	var v vehicle
-	v.speed = 50
-	v.enginePower = 10
-	speedUpDown(&v)
+	// var v vehicle
+	// v.speed = 50
+	// v.enginePower = 10
+	v := &vehicle{
+		speed:       50,
+		enginePower: 10,
+	}
+	speedUpDown(v)
 }
 
 func main() {
