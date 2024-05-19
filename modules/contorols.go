@@ -74,8 +74,8 @@ func printForRange(items []item) {
 	fmt.Printf("%+v\n", items)
 	fmt.Println("----------")
 
-	for _, i := range items {
-		i.price *= 1.1
+	for i := range items {
+		items[i].price *= 1.1
 	}
 	fmt.Printf("%+v\n", items)
 	fmt.Println("----------")
