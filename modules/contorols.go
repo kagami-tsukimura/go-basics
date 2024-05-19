@@ -30,6 +30,17 @@ func printForInf() {
 	}
 }
 
+func printForInfBreak(val int, thr int) {
+	for {
+		if val > thr {
+			break
+		}
+		fmt.Printf("loop: %v 〜 %v\n", val, thr)
+		val += 1
+		time.Sleep(2 * time.Second)
+	}
+}
+
 func Controls() {
 	a := 0
 	printIf(a)
@@ -40,7 +51,10 @@ func Controls() {
 
 	d := 10
 	printFor(d)
-	printForInf()
+	// printForInf()
+
+	e := 3
+	printForInfBreak(e, 5)
 
 	fmt.Println("----------")
 }
