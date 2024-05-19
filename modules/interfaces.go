@@ -5,14 +5,6 @@ import (
 	"unsafe"
 )
 
-const SECRET = "abc"
-
-var (
-	i int
-	s string
-	b bool
-)
-
 type controller interface {
 	speedUp() int
 	speedDown() int
