@@ -23,8 +23,9 @@ func Errors() {
 	fmt.Printf("Unwrap type: %[1]T\n", errors.Unwrap(err0))
 	fmt.Println("----------")
 
-	err1 := fmt.Errorf("add info: %w", errors.New("origin error"))
+	err1 := fmt.Errorf("add info: %v", errors.New("origin error"))
 	fmt.Println(err1)
 	fmt.Printf("type: %[1]T\n", err1)
+	fmt.Println(errors.Unwrap(err1))
 
 }
