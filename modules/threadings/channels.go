@@ -34,7 +34,7 @@ func Channels() {
 	fmt.Printf("num of working goroutines: %d\n", runtime.NumGoroutine())
 
 	// バッファ付きchannel
-	// バッファが一杯でなければ、channelの受信を待たずに書き込める→deadlockを回避
+	// バッファが一杯になるまで、channelの受信を待たずに書き込める→deadlockを回避
 	// 1: バッファサイズ
 	ch2 := make(chan int, 1)
 	ch2 <- 2
