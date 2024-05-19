@@ -29,5 +29,6 @@ func Errors() {
 	// 引数にUnwrapしていないメソッド: nil
 	// 値を返す: fmt.Errorfで%v → %w
 	fmt.Println(errors.Unwrap(err1))
+	fmt.Println("----------")
 
 }
