@@ -14,7 +14,8 @@ func Devide(x, y int) float32 {
 }
 
 func UnitTest() {
-	fmt.Println(Add(1, 2))
-	fmt.Println(Devide(1, 2))
-	fmt.Println(Devide(1, 0))
+	x, y := 3, 5
+	fmt.Println(Add(x, y))
+	fmt.Println(Devide(x, y))
+	fmt.Println(Devide(x, 0))
 }
