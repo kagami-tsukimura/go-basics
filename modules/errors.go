@@ -46,8 +46,15 @@ func Errors() {
 		fmt.Println("matched")
 	}
 
-	err3 := fileCheck("test.txt")
-	fmt.Println(err3)
+	file := "test.txt"
+	err3 := fileCheck(file)
+	if err3 != nil {
+		if errors.Is(err3, os.ErrNotExist) {
+			fmt.Printf("%v file not found\n", file)
+		} else {
+			fmt.Println("unknown error")
+		}
+	}
 
 }
 
