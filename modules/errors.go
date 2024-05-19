@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+var ErrCustom = errors.New("not found")
+
 func Errors() {
 
 	err01 := errors.New("something wrong")
@@ -30,5 +32,9 @@ func Errors() {
 	// 値を返す: fmt.Errorfで%v → %w
 	fmt.Println(errors.Unwrap(err1))
 	fmt.Println("----------")
+
+	// %w: ErrCustomにテキスト追加
+	err2 := fmt.Errorf("in repository layer: %w", ErrCustom)
+	fmt.Println(err2)
 
 }
