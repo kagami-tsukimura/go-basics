@@ -36,7 +36,8 @@ func TestDevide(t *testing.T) {
 		args args
 		want float32
 	}{
-		// TODO: Add test cases.
+		{name: "3/2=1.5", args: args{x: 3, y: 2}, want: 1.5},
+		{name: "5/2=2.5", args: args{x: 5, y: 2}, want: 2.5},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
