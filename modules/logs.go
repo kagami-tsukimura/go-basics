@@ -29,8 +29,8 @@ func createLogFile(filePath string) {
 }
 
 func Logs() {
-	logDir := "logger"
-	filePath := logDir + "/log.txt"
+	logDir := "logs"
+	filePath := logDir + "/logger.log"
 	mkDir(logDir)
 	createLogFile(filePath)
 }
