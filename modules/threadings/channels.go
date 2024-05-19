@@ -29,5 +29,7 @@ func Channels() {
 	go func() {
 		fmt.Println(<-ch1)
 	}()
+	// goroutine leak回避
+	ch1 <- 10
 	fmt.Printf("num of working goroutines: %d\n", runtime.NumGoroutine())
 }
