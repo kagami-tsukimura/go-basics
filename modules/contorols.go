@@ -67,6 +67,20 @@ type item struct {
 	price float32
 }
 
+func printForRange(items []item) {
+	for _, i := range items {
+		i.price *= 1.1
+	}
+	fmt.Printf("%+v\n", items)
+	fmt.Println("----------")
+
+	for _, i := range items {
+		i.price *= 1.1
+	}
+	fmt.Printf("%+v\n", items)
+	fmt.Println("----------")
+}
+
 func Controls() {
 	a := 0
 	printIf(a)
@@ -79,10 +93,19 @@ func Controls() {
 	printFor(d)
 	// printForInf()
 
-	e := 3
-	printForInfBreak(e, 5)
+	// e := 3
+	// printForInfBreak(e, 5)
 
 	printForSwitch(10)
+
+	// 構造体3のitem型スライス
+	items := []item{
+		{price: 10.},
+		{price: 20.},
+		{price: 30.},
+	}
+
+	printForRange(items)
 
 	fmt.Println("----------")
 }
