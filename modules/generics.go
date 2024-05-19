@@ -32,6 +32,6 @@ func Generics() {
 	// fmt.Printf("%v\n", add(true, false))
 	var i1, i2 NewInt = 3, 4
 	fmt.Printf("%v\n", add(i1, i2))
-	fmt.Printf("%v\n", min(3, 4))
+	fmt.Printf("min value is %v\n", min(3, 4))
 	fmt.Println("----------")
 }
