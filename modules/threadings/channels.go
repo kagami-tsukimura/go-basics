@@ -38,6 +38,9 @@ func Channels() {
 	// 1: バッファサイズ
 	ch2 := make(chan int, 1)
 	ch2 <- 2
+	// バッファが一杯のため、deadlock
+	// バッファサイズを2にしておけばdeadlockが回避できる
+	ch2 <- 3
 	fmt.Println(<-ch2)
 
 	// ch3 := make(chan int, 1)
