@@ -38,6 +38,7 @@ func TestDevide(t *testing.T) {
 	}{
 		{name: "3/2=1.5", args: args{x: 3, y: 2}, want: 1.5},
 		{name: "5/2=2.5", args: args{x: 5, y: 2}, want: 2.5},
+		{name: "5/0=0", args: args{x: 5, y: 0}, want: 0.},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

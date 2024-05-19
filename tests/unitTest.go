@@ -1,7 +1,5 @@
 package tests
 
-import "fmt"
-
 func Add(x, y int) int {
 	return x + y
 }
@@ -14,8 +12,8 @@ func Devide(x, y int) float32 {
 }
 
 func UnitTest() {
-	x, y := 3, 5
-	fmt.Println(Add(x, y))
-	fmt.Println(Devide(x, y))
-	fmt.Println(Devide(x, 0))
+	// x, y := 3, 5
+	// fmt.Println(Add(x, y))
+	// fmt.Println(Devide(x, y))
+	// fmt.Println(Devide(x, 0))
 }
