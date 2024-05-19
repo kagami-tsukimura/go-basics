@@ -19,5 +19,8 @@ func Errors() {
 
 	err0 := fmt.Errorf("add info: %w", errors.New("origin error"))
 	fmt.Printf("pointer: %[1]p\ntype: %[1]T\nvalue: %[1]v\n", err0)
+	fmt.Println(errors.Unwrap(err0))
+	fmt.Printf("Unwrap type: %[1]T\n", errors.Unwrap(err0))
+	fmt.Println("----------")
 
 }
