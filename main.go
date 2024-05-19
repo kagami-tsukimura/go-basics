@@ -1,6 +1,8 @@
 package main
 
-import "go-basics/modules"
+import (
+	"go-basics/tests"
+)
 
 func main() {
 
@@ -13,6 +15,7 @@ func main() {
 	// modules.Interfaces()
 	// modules.Controls()
 	// modules.Errors()
-	modules.Generics()
+	// modules.Generics()
+	tests.UnitTest()
 
 }
