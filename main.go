@@ -603,11 +603,17 @@ func interfaces() {
 	var i1 interface{}
 	// any: interface{}と同様(別名)
 	var i2 any
+	fmt.Printf("i1: %v %T %v\n", i1, i1, unsafe.Sizeof(i1))
+	fmt.Printf("i2: %v %T %v\n", i2, i2, unsafe.Sizeof(i2))
+
+	fmt.Println("----------")
+
 	checkType(i1)
 	checkType(i2)
 	checkType(v)
 	checkType(v.speed)
 	checkType(v.enginePower)
+	fmt.Println("----------")
 }
 
 func main() {
