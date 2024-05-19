@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-basics/modules"
+	"go-basics/modules/threadings"
 )
 
 func main() {
@@ -17,6 +17,7 @@ func main() {
 	// modules.Errors()
 	// modules.Generics()
 	// tests.UnitTest()
-	modules.Logs()
+	// modules.Logs()
+	threadings.Runtimes()
 
 }
