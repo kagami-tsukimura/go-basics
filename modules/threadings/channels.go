@@ -2,8 +2,7 @@ package threadings
 
 import (
 	"fmt"
-	"sync"
-	"time"
+	"runtime"
 )
 
 func Channels() {
@@ -12,14 +11,22 @@ func Channels() {
 	// ch <- 10
 	// fmt.Println(<-ch)
 
-	ch := make(chan int)
-	var wg sync.WaitGroup
-	wg.Add(1)
+	// // channels
+	// ch := make(chan int)
+	// var wg sync.WaitGroup
+	// wg.Add(1)
+	// go func() {
+	// 	defer wg.Done()
+	// 	ch <- 10
+	// 	time.Sleep(500 * time.Millisecond)
+	// }()
+	// fmt.Println(<-ch)
+	// wg.Wait()
+
+	// goroutine leak
+	ch1 := make(chan int)
 	go func() {
-		defer wg.Done()
-		ch <- 10
-		time.Sleep(500 * time.Millisecond)
+		fmt.Println(<-ch1)
 	}()
-	fmt.Println(<-ch)
-	wg.Wait()
+	fmt.Printf("num of working goroutines: %d\n", runtime.NumGoroutine())
 }
