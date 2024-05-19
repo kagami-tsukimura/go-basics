@@ -33,7 +33,7 @@ func printForInf() {
 func printForInfBreak(val int, thr int) {
 	for {
 		if val > thr {
-			println("loop done!")
+			fmt.Println("loop done!")
 			break
 		}
 		fmt.Printf("loop: %v 〜 %v\n", val, thr)
@@ -61,6 +61,10 @@ loop:
 		}
 	}
 	fmt.Println("\n----------")
+}
+
+type item struct {
+	price float32
 }
 
 func Controls() {
