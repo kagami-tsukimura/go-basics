@@ -3,6 +3,7 @@ package modules
 import (
 	"errors"
 	"fmt"
+	"os"
 )
 
 var ErrCustom = errors.New("not found")
@@ -45,4 +46,13 @@ func Errors() {
 		fmt.Println("matched")
 	}
 
+}
+
+func fileCheck(name string) error {
+	f, err := os.Open(name)
+	if err != nil {
+		return fmt.Errorf("in checker: %w", err)
+	}
+	defer f.Close()
+	return nil
 }
