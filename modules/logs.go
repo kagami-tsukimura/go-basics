@@ -31,6 +31,8 @@ func createLogFile(filePath string) {
 	flags := log.Lshortfile | log.LstdFlags
 	warnLogger := log.New(io.MultiWriter(file, os.Stderr), "WARN: ", flags)
 	warnLogger.Println("warning A")
+	errorLogger := log.New(io.MultiWriter(file, os.Stderr), "ERROR: ", flags)
+	errorLogger.Println("error B")
 }
 
 func Logs() {
