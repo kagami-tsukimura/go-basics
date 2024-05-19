@@ -529,6 +529,26 @@ func functions() {
 	fmt.Println("----------")
 }
 
+func (v *vehicle) speedUp() int {
+	v.speed += 10 * v.enginePower
+	return v.speed
+}
+
+func (v *vehicle) speedDonw() int {
+	v.speed -= 5 * v.enginePower
+	return v.speed
+}
+
+func (b *bycycle) speedUp() int {
+	b.speed += 10 * b.humanPower
+	return b.speed
+}
+
+func (b *bycycle) speedDonw() int {
+	b.speed -= 5 * b.humanPower
+	return b.speed
+}
+
 func main() {
 
 	// modulePackage()
