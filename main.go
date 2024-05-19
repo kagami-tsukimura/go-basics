@@ -10,6 +10,7 @@ func main() {
 	// modules.Slices()
 	// modules.Structs()
 	// modules.Functions()
-	modules.Interfaces()
+	// modules.Interfaces()
+	modules.Controls()
 
 }
