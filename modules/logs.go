@@ -1,6 +1,7 @@
 package modules
 
 import (
+	"io"
 	"log"
 	"os"
 )
@@ -26,6 +27,10 @@ func createLogFile(filePath string) {
 		log.Fatal(err)
 	}
 	defer file.Close()
+
+	flags := log.Lshortfile | log.LstdFlags
+	warnLogger := log.New(io.MultiWriter(file, os.Stderr), "WARN: ", flags)
+	warnLogger.Println("warning A")
 }
 
 func Logs() {
@@ -33,4 +38,5 @@ func Logs() {
 	filePath := logDir + "/logger.log"
 	mkDir(logDir)
 	createLogFile(filePath)
+
 }
