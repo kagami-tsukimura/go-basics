@@ -65,9 +65,15 @@ go test -v <ディレクトリ名>
 go test -v ./tests
 ```
 
-- カバレッジ確認。
+- カバレッジ実行。
 
 ```bash
 go test -v -cover -coverprofile=coverage.out <ディレクトリ名>
 go test -v -cover -coverprofile=coverage.out ./tests
+```
+
+- カバレッジ確認。
+
+```bash
+go tool cover -html=coverage.out
 ```
