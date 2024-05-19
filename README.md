@@ -62,4 +62,12 @@ go mod tidy
 
 ```bash
 go test -v <ディレクトリ名>
+go test -v ./tests
+```
+
+- カバレッジ確認。
+
+```bash
+go test -v -cover -coverprofile=coverage.out <ディレクトリ名>
+go test -v -cover -coverprofile=coverage.out ./tests
 ```
