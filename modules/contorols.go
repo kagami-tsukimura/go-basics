@@ -33,12 +33,34 @@ func printForInf() {
 func printForInfBreak(val int, thr int) {
 	for {
 		if val > thr {
+			println("loop done!")
 			break
 		}
 		fmt.Printf("loop: %v 〜 %v\n", val, thr)
 		val += 1
 		time.Sleep(2 * time.Second)
 	}
+}
+
+func printForSwitch(val int) {
+	// loop: switch内のbreakでfor loopを抜けられるように明示
+loop:
+	for i := 0; i < val; i++ {
+		switch i {
+		case 2:
+			continue
+		case 3:
+			// NOTE: switchだけ抜ける時はcontinue
+			continue
+		case 8:
+			// NOTE: breakのみではswitchだけ抜けるためループ継続
+			// loop自体を抜ける
+			break loop
+		default:
+			fmt.Printf("%v ", i)
+		}
+	}
+	fmt.Println("\n----------")
 }
 
 func Controls() {
@@ -55,6 +77,8 @@ func Controls() {
 
 	e := 3
 	printForInfBreak(e, 5)
+
+	printForSwitch(10)
 
 	fmt.Println("----------")
 }
