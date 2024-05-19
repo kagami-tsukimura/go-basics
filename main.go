@@ -21,6 +21,7 @@ func main() {
 
 	// threadings.Runtimes()
 	// threadings.Goroutines()
-	threadings.Tracers()
+	// threadings.Tracers()
+	threadings.Channels()
 
 }
