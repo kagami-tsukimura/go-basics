@@ -558,11 +558,15 @@ func interfaces() {
 	// var v vehicle
 	// v.speed = 50
 	// v.enginePower = 10
+	// speedUpDown(&v)
+
+	// 宣言時に構造体のpointerを取得
 	v := &vehicle{
 		speed:       0,
 		enginePower: 10,
 	}
 	speedUpDown(v)
+	fmt.Println("----------")
 }
 
 func main() {
