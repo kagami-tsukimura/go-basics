@@ -564,15 +564,15 @@ func checkType(i any) {
 	// 型判定
 	switch i.(type) {
 	case nil:
-		fmt.Println("i is nil")
+		fmt.Println("nil")
 	case int:
-		fmt.Println("i is int")
+		fmt.Println("int")
 	case string:
-		fmt.Println("i is string")
+		fmt.Println("string")
 	case bool:
-		fmt.Println("i is bool")
+		fmt.Println("bool")
 	default:
-		fmt.Println("i is unknown")
+		fmt.Println("unknown")
 	}
 }
 
