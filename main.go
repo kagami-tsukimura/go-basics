@@ -554,6 +554,10 @@ func speedUpDown(c controller) {
 	fmt.Printf(("current speed: %v\n"), c.speedDown())
 }
 
+func (v vehicle) String() string {
+	return fmt.Sprintf("Vehicle currnet speed: %v, enginePower: %v", v.speed, v.enginePower)
+}
+
 func interfaces() {
 	// var v vehicle
 	// v.speed = 50
