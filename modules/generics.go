@@ -28,10 +28,25 @@ func Generics() {
 	fmt.Printf("%v\n", add(1, 2))
 	fmt.Printf("%v\n", add(1.1, 2.1))
 	fmt.Printf("%v\n", add("file", ".txt"))
+	fmt.Println("----------")
+
 	// bool型はcustomConstraintsに定義されていないためエラー
 	// fmt.Printf("%v\n", add(true, false))
 	var i1, i2 NewInt = 3, 4
 	fmt.Printf("%v\n", add(i1, i2))
 	fmt.Printf("min value is %v\n", min(3, 4))
 	fmt.Println("----------")
+
+	m1 := map[string]uint{
+		"A": 1,
+		"B": 2,
+		"C": 3,
+	}
+	m2 := map[int]float32{
+		1: 1.23,
+		2: 4.56,
+		3: 7.89,
+	}
+
+	fmt.Printf("%v %v\n", m1, m2)
 }
