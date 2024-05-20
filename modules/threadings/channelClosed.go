@@ -22,6 +22,7 @@ func normalChannel() {
 	v, ok := <-ch1
 	fmt.Println(v, ok)
 	wg.Wait()
+	fmt.Println("----------")
 }
 
 func bufferedChannel() {
@@ -35,6 +36,7 @@ func bufferedChannel() {
 		v, ok := <-ch2
 		fmt.Println(v, ok)
 	}
+	fmt.Println("----------")
 }
 
 func generateCountStream() <-chan int {
@@ -52,4 +54,9 @@ func ChannelClosed() {
 	normalChannel()
 	bufferedChannel()
 
+	ch3 := generateCountStream()
+	for v := range ch3 {
+		fmt.Println(v)
+	}
+	fmt.Println("----------")
 }
