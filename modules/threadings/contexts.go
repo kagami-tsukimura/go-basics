@@ -33,11 +33,11 @@ func subTask(ctx context.Context, wg *sync.WaitGroup, id int) {
 
 func taskCancel(wg *sync.WaitGroup) {
 	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
 	wg.Add(3)
 	go subTask(ctx, wg, 1)
 	go subTask(ctx, wg, 2)
 	go subTask(ctx, wg, 3)
-	cancel()
 	wg.Wait()
 }
 
