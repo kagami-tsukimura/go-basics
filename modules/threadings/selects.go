@@ -32,4 +32,7 @@ func Selects() {
 			ch2 = nil
 		}
 	}
+	wg.Wait()
+	fmt.Println("finished")
+	fmt.Println("----------")
 }
