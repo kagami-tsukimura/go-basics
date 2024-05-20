@@ -25,9 +25,10 @@ func normalChannel() {
 }
 
 func bufferedChannel() {
-	ch1 := make(chan int, 1)
-	ch1 <- 10
-	fmt.Println(<-ch1)
+	ch2 := make(chan int, 2)
+	ch2 <- 1
+	ch2 <- 2
+	close(ch2)
 }
 
 func ChannelClosed() {
