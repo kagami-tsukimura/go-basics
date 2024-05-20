@@ -42,6 +42,23 @@ func countConsumer(ctx context.Context, wg *sync.WaitGroup, ch1 <-chan int, ch2 
 			// timeout
 			fmt.Println(ctx.Err())
 			// break loop
+			for ch1 != nil || ch2 != nil {
+				select {
+				case v, ok := <-ch1:
+					if !ok {
+						ch1 = nil
+						break
+					}
+					fmt.Printf("ch1 %v\n", v)
+				case v, ok := <-ch2:
+					if !ok {
+						ch2 = nil
+						break
+					}
+					fmt.Printf("ch2 %v\n", v)
+				}
+			}
+
 		case v, ok := <-ch1:
 			if !ok {
 				ch1 = nil
