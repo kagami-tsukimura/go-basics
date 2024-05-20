@@ -7,10 +7,13 @@ import (
 
 func Mutexes() {
 	var wg sync.WaitGroup
+	var mu sync.Mutex
 	var i int
 	wg.Add(2)
 	go func() {
 		defer wg.Done()
+		mu.Lock()
+		defer mu.Unlock()
 		i++
 	}()
 	go func() {
