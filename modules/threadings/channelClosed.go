@@ -18,6 +18,7 @@ func ChannelClosed() {
 	ch1 <- 10
 	close(ch1)
 
+	// channelが開いているとtrue, 閉じているとfalse
 	v, ok := <-ch1
 	fmt.Println(v, ok)
 	wg.Wait()
