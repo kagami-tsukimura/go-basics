@@ -85,3 +85,9 @@ go tool cover -html=coverage.out
 ```bash
 go tool trace trace.out
 ```
+
+## データ競合（データレース）
+
+```bash
+go run -race main.go
+```
