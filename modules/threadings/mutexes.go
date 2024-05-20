@@ -23,6 +23,7 @@ func Mutexes() {
 		// MutexによるLock
 		mu.Lock()
 		// 処理完了後にUnLock
+		defer mu.Unlock()
 		i++
 	}()
 	wg.Wait()
