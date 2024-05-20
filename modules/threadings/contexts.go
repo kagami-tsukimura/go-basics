@@ -34,11 +34,17 @@ func subTask(ctx context.Context, wg *sync.WaitGroup, id int) {
 func taskCancel(wg *sync.WaitGroup) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	wg.Add(3)
-	go subTask(ctx, wg, 1)
-	go subTask(ctx, wg, 2)
-	go subTask(ctx, wg, 3)
-	wg.Wait()
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		v, err := criticalTask(ctx)
+		if err != nil {
+			fmt.Printf("critical task cancelled due to: %v\n", err)
+			cancel()
+			return
+		}
+		fmt.Println("success: ", v)
+	}()
 }
 
 func normalTask(ctx context.Context) (string, error) {
