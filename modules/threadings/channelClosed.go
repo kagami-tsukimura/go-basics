@@ -31,6 +31,7 @@ func bufferedChannel() {
 	close(ch2)
 	// channelが開いているとtrue, 閉じているとfalse
 	for i := 0; i < 3; i++ {
+		// すべて読み込んだ後は、channelが閉じてfalse
 		v, ok := <-ch2
 		fmt.Println(v, ok)
 	}
