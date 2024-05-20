@@ -35,13 +35,13 @@ func countProducer(wg *sync.WaitGroup, ch chan<- int, size int, sleep int) {
 
 func countConsumer(ctx context.Context, wg *sync.WaitGroup, ch1 <-chan int, ch2 <-chan int) {
 	defer wg.Done()
-loop:
+	// loop:
 	for ch1 != nil || ch2 != nil {
 		select {
 		case <-ctx.Done():
 			// timeout
 			fmt.Println(ctx.Err())
-			break loop
+			// break loop
 		case v, ok := <-ch1:
 			if !ok {
 				ch1 = nil
