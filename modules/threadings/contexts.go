@@ -35,6 +35,7 @@ func taskCancel(wg *sync.WaitGroup) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	wg.Add(1)
+	// goroutine criticalTask
 	go func() {
 		defer wg.Done()
 		v, err := criticalTask(ctx)
