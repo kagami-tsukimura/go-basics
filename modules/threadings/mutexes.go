@@ -16,7 +16,8 @@ func Mutexes() {
 		mu.Lock()
 		// 処理完了後にUnLock
 		defer mu.Unlock()
-		i++
+		// i++
+		i = 1
 	}()
 	go func() {
 		defer wg.Done()
@@ -24,7 +25,8 @@ func Mutexes() {
 		mu.Lock()
 		// 処理完了後にUnLock
 		defer mu.Unlock()
-		i++
+		// i++
+		i = 2
 	}()
 	wg.Wait()
 	fmt.Println(i)
