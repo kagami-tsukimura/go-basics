@@ -35,6 +35,7 @@ func taskCancel(wg *sync.WaitGroup) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	wg.Add(1)
+
 	// goroutine criticalTask
 	go func() {
 		defer wg.Done()
@@ -46,6 +47,20 @@ func taskCancel(wg *sync.WaitGroup) {
 		}
 		fmt.Println("success: ", v)
 	}()
+
+	// goroutine normalTask
+	go func() {
+		defer wg.Done()
+		v, err := normalTask(ctx)
+		if err != nil {
+			fmt.Printf("normal task cancelled due to: %v\n", err)
+			cancel()
+			return
+		}
+		fmt.Println("success: ", v)
+	}()
+
+	wg.Wait()
 }
 
 func normalTask(ctx context.Context) (string, error) {
