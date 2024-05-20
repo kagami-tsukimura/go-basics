@@ -41,6 +41,20 @@ func taskCancel(wg *sync.WaitGroup) {
 	wg.Wait()
 }
 
+func criticalTask(ctx context.Context) (string, error) {
+	ctx, cancel := context.WithTimeout(ctx, 800*time.Millisecond)
+	defer cancel()
+	t := time.NewTicker(1000 * time.Millisecond)
+
+	select {
+	case <-ctx.Done():
+		return "", ctx.Err()
+	case <-t.C:
+		t.Stop()
+	}
+	return "OK_Critical", nil
+}
+
 func Contexts() {
 	// Context: メインgoroutineからサブgoroutineを一括キャンセル
 	var wg sync.WaitGroup
