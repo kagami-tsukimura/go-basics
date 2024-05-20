@@ -8,8 +8,9 @@ import (
 )
 
 func Selects() {
-	ch1 := make(chan string)
-	ch2 := make(chan string)
+	// buffer1: timeoutで書き込めなくなる→deadlock回避
+	ch1 := make(chan string, 1)
+	ch2 := make(chan string, 1)
 	var wg sync.WaitGroup
 	ctx, cancel := context.WithTimeout(context.Background(), 300*time.Millisecond)
 	defer cancel()
