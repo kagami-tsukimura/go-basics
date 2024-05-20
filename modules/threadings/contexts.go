@@ -41,6 +41,18 @@ func taskCancel(wg *sync.WaitGroup) {
 	wg.Wait()
 }
 
+func normalTask(ctx context.Context) (string, error) {
+	t := time.NewTicker(3000 * time.Millisecond)
+
+	select {
+	case <-ctx.Done():
+		return "", ctx.Err()
+	case <-t.C:
+		t.Stop()
+	}
+	return "OK_Normal", nil
+}
+
 func criticalTask(ctx context.Context) (string, error) {
 	ctx, cancel := context.WithTimeout(ctx, 800*time.Millisecond)
 	defer cancel()
