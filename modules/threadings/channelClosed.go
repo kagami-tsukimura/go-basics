@@ -30,8 +30,10 @@ func bufferedChannel() {
 	ch2 <- 2
 	close(ch2)
 	// channelが開いているとtrue, 閉じているとfalse
-	v, ok := <-ch2
-	fmt.Println(v, ok)
+	for i := 0; i < 2; i++ {
+		v, ok := <-ch2
+		fmt.Println(v, ok)
+	}
 }
 
 func ChannelClosed() {
