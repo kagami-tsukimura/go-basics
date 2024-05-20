@@ -48,7 +48,7 @@ func read(mu *sync.RWMutex, wg *sync.WaitGroup, c *int) {
 	defer mu.RUnlock()
 	fmt.Println("read lock")
 	fmt.Println("c: ", *c)
-	time.Sleep(10 * time.Second)
+	time.Sleep(1 * time.Second)
 	fmt.Println("read unlock")
 }
 
