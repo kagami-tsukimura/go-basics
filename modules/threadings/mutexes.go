@@ -38,9 +38,10 @@ func rwMutexes() {
 	var wg sync.WaitGroup
 	var rwMu sync.RWMutex
 	var c int
-	wg.Add(4)
+	wg.Add(5)
 	write(&rwMu, &wg, &c)
 	read(&rwMu, &wg, &c)
+	write(&rwMu, &wg, &c)
 	read(&rwMu, &wg, &c)
 	read(&rwMu, &wg, &c)
 }
