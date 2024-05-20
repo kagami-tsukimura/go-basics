@@ -92,5 +92,6 @@ go tool trace trace.out
 - 競合がなければ`go run <ファイル名>`と同様の結果を表示する。
 
 ```bash
+go run -race <ファイル名>
 go run -race main.go
 ```
