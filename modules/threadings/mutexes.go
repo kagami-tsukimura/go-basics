@@ -44,6 +44,10 @@ func rwMutexes() {
 	write(&rwMu, &wg, &c)
 	read(&rwMu, &wg, &c)
 	read(&rwMu, &wg, &c)
+
+	wg.Wait()
+	fmt.Println("finished")
+	fmt.Println("----------")
 }
 
 func read(mu *sync.RWMutex, wg *sync.WaitGroup, c *int) {
