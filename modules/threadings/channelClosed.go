@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func ChannelClosed() {
+func normalChannel() {
 	ch1 := make(chan int)
 
 	var wg sync.WaitGroup
@@ -22,4 +22,16 @@ func ChannelClosed() {
 	v, ok := <-ch1
 	fmt.Println(v, ok)
 	wg.Wait()
+}
+
+func bufferedChannel() {
+	ch1 := make(chan int, 1)
+	ch1 <- 10
+	fmt.Println(<-ch1)
+}
+
+func ChannelClosed() {
+	normalChannel()
+	bufferedChannel()
+
 }
