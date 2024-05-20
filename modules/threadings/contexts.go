@@ -54,7 +54,6 @@ func taskCancel(wg *sync.WaitGroup) {
 		v, err := normalTask(ctx)
 		if err != nil {
 			fmt.Printf("normal task cancelled due to: %v\n", err)
-			cancel()
 			return
 		}
 		fmt.Println("success: ", v)
