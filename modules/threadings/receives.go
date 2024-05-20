@@ -10,7 +10,7 @@ func Packages() {
 	fmt.Println("Packages")
 }
 
-func countProductor(wg *sync.WaitGroup, ch chan<- int, size int, sleep int) {
+func countProducer(wg *sync.WaitGroup, ch chan<- int, size int, sleep int) {
 	defer wg.Done()
 	defer close(ch)
 
