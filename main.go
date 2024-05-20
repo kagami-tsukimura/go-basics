@@ -25,6 +25,7 @@ func main() {
 	// threadings.Channels()
 	// threadings.ChannelClosed()
 	// threadings.Selects()
-	threadings.SelectDefaults()
+	// threadings.SelectDefaults()
+	threadings.Packages()
 
 }
