@@ -7,8 +7,20 @@ import (
 	"time"
 )
 
+const bufferSize = 5
+
 func Packages() {
-	fmt.Println("Packages")
+	ch1 := make(chan int, bufferSize)
+	ch2 := make(chan int, bufferSize)
+	var wg sync.WaitGroup
+	ctx, cancel := context.WithTimeout(context.Background(), 3000*time.Millisecond)
+	defer cancel()
+	wg.Add(3)
+	go countProducer(&wg, ch1, bufferSize, 50)
+	go countProducer(&wg, ch2, bufferSize, 500)
+	go countConsumer(ctx, &wg, ch1, ch2)
+	wg.Wait()
+	fmt.Println("finished")
 }
 
 func countProducer(wg *sync.WaitGroup, ch chan<- int, size int, sleep int) {
@@ -21,7 +33,7 @@ func countProducer(wg *sync.WaitGroup, ch chan<- int, size int, sleep int) {
 	}
 }
 
-func countConsumer(ctx context.Context, wg *sync.WaitGroup, ch1 <-chan int, ch2 chan<- int) {
+func countConsumer(ctx context.Context, wg *sync.WaitGroup, ch1 <-chan int, ch2 <-chan int) {
 	defer wg.Done()
 loop:
 	for ch1 != nil || ch2 != nil {
