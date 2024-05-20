@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func Mutexes() {
+func raceMutexes() {
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 	var i int
@@ -30,4 +30,9 @@ func Mutexes() {
 	}()
 	wg.Wait()
 	fmt.Println(i)
+	fmt.Println("----------")
+}
+
+func Mutexes() {
+	raceMutexes()
 }
