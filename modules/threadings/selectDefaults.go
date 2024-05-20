@@ -19,12 +19,12 @@ func SelectDefaults() {
 			ch <- "hello"
 		}
 	}()
-	for i := 0; i < bufSize; i++ {
+	for i := 0; i < 3; i++ {
 		select {
 		case m := <-ch:
 			fmt.Println(m)
 		default:
-			fmt.Println("default")
+			fmt.Println("no messages")
 		}
 		time.Sleep(1500 * time.Millisecond)
 	}
