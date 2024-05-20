@@ -3,6 +3,7 @@ package threadings
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func normalChannel() {
@@ -63,10 +64,13 @@ func notifyChannel() {
 			<-nCh
 			fmt.Println(i)
 		}(i)
-		wg.Wait()
-		fmt.Println("finished")
 	}
+	time.Sleep(2 * time.Second)
+	close(nCh)
+	fmt.Println("unblocked by manual close")
 
+	wg.Wait()
+	fmt.Println("finished")
 	fmt.Println("----------")
 }
 
