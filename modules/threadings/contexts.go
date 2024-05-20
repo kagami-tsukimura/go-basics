@@ -8,7 +8,7 @@ import (
 )
 
 func taskTimeout(wg *sync.WaitGroup) {
-	ctx, cancel := context.WithTimeout(context.Background(), 400*time.Millisecond)
+	ctx, cancel := context.WithTimeout(context.Background(), 600*time.Millisecond)
 	defer cancel()
 
 	wg.Add(3)
