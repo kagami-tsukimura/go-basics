@@ -27,6 +27,7 @@ loop:
 	for ch1 != nil || ch2 != nil {
 		select {
 		case <-ctx.Done():
+			// timeout
 			fmt.Println(ctx.Err())
 			break loop
 		case v, ok := <-ch1:
