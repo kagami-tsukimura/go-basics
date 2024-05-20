@@ -1,8 +1,17 @@
 package threadings
 
-import "fmt"
+import (
+	"context"
+	"fmt"
+	"time"
+)
 
 func Contexts() {
 	// Context: メインgoroutineからサブgoroutineを一括キャンセル
-	fmt.Println("Contexts")
+	ctx, cancel := context.WithCancel(context.Background())
+	go func() {
+		time.Sleep(1 * time.Second)
+		cancel()
+	}()
+	fmt.Println(ctx.Err())
 }
