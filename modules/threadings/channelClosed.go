@@ -10,6 +10,7 @@ func ChannelClosed() {
 
 	var wg sync.WaitGroup
 	wg.Add(1)
+	// channel読み込みgoroutine
 	go func() {
 		defer wg.Done()
 		fmt.Println(<-ch1)
