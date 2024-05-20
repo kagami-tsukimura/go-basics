@@ -12,7 +12,9 @@ func Mutexes() {
 	wg.Add(2)
 	go func() {
 		defer wg.Done()
+		// MutexによるLock
 		mu.Lock()
+		// 処理完了後にUnLock
 		defer mu.Unlock()
 		i++
 	}()
