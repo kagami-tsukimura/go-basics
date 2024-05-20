@@ -43,11 +43,31 @@ func generateCountStream() <-chan int {
 	ch := make(chan int)
 	go func() {
 		defer close(ch)
-		for i := 0; i < 5; i++ {
+		for i := 0; i <= 5; i++ {
 			ch <- i
 		}
 	}()
 	return ch
+}
+
+func notifyChannel() {
+	var wg sync.WaitGroup
+	// 構造体: 0byteの消費
+	// NOTE: 構造体が通知専用のchannelに適している
+	nCh := make(chan struct{})
+	for i := 0; i < 5; i++ {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			fmt.Printf("goroutine %v started\n", i)
+			<-nCh
+			fmt.Println(i)
+		}(i)
+		wg.Wait()
+		fmt.Println("finished")
+	}
+
+	fmt.Println("----------")
 }
 
 func ChannelClosed() {
@@ -59,4 +79,6 @@ func ChannelClosed() {
 		fmt.Println(v)
 	}
 	fmt.Println("----------")
+
+	notifyChannel()
 }
