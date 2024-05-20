@@ -12,7 +12,7 @@ func Selects() {
 	ch1 := make(chan string, 1)
 	ch2 := make(chan string, 1)
 	var wg sync.WaitGroup
-	ctx, cancel := context.WithTimeout(context.Background(), 300*time.Millisecond)
+	ctx, cancel := context.WithTimeout(context.Background(), 600*time.Millisecond)
 	defer cancel()
 	wg.Add(2)
 	go func() {
