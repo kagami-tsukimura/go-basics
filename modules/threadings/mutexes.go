@@ -85,6 +85,8 @@ func atomics() {
 			}
 		}()
 	}
+	wg.Wait()
+	fmt.Println(c)
 	fmt.Println("----------")
 }
 
