@@ -29,6 +29,8 @@ func bufferedChannel() {
 	ch2 <- 1
 	ch2 <- 2
 	close(ch2)
+	v, ok := <-ch2
+	fmt.Println(v, ok)
 }
 
 func ChannelClosed() {
