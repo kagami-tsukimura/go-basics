@@ -89,10 +89,27 @@ func criticalTask(ctx context.Context) (string, error) {
 	return "OK_Critical", nil
 }
 
+func taskDeadline(wg *sync.WaitGroup) {
+	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(40*time.Millisecond))
+	defer cancel()
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		v, err := criticalTask(ctx)
+		if err != nil {
+			fmt.Printf("critical task cancelled due to: %v\n", err)
+			return
+		}
+		fmt.Println("success: ", v)
+	}()
+	wg.Wait()
+}
+
 func Contexts() {
 	// Context: メインgoroutineからサブgoroutineを一括キャンセル
 	var wg sync.WaitGroup
 	taskTimeout(&wg)
 	taskCancel(&wg)
+	taskDeadline(&wg)
 
 }
