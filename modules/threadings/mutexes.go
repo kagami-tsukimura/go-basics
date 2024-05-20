@@ -39,11 +39,11 @@ func rwMutexes() {
 	var rwMu sync.RWMutex
 	var c int
 	wg.Add(5)
-	write(&rwMu, &wg, &c)
-	read(&rwMu, &wg, &c)
-	write(&rwMu, &wg, &c)
-	read(&rwMu, &wg, &c)
-	read(&rwMu, &wg, &c)
+	go write(&rwMu, &wg, &c)
+	go read(&rwMu, &wg, &c)
+	go write(&rwMu, &wg, &c)
+	go read(&rwMu, &wg, &c)
+	go read(&rwMu, &wg, &c)
 
 	wg.Wait()
 	fmt.Println("finished")
