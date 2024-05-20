@@ -88,6 +88,9 @@ go tool trace trace.out
 
 ## データ競合（データレース）
 
+- 競合があると`Warning: DATA RACE`というメッセージが表示される。
+- 競合がなければ`go run <ファイル名>`と同様の結果を表示する。
+
 ```bash
 go run -race main.go
 ```
