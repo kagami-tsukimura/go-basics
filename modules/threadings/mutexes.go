@@ -36,9 +36,13 @@ func raceMutexes() {
 
 func rwMutexes() {
 	var wg sync.WaitGroup
-	var mu sync.RWMutex
+	var rwMu sync.RWMutex
 	var c int
-	read(&mu, &wg, &c)
+	wg.Add(4)
+	write(&rwMu, &wg, &c)
+	read(&rwMu, &wg, &c)
+	read(&rwMu, &wg, &c)
+	read(&rwMu, &wg, &c)
 }
 
 func read(mu *sync.RWMutex, wg *sync.WaitGroup, c *int) {
@@ -50,6 +54,16 @@ func read(mu *sync.RWMutex, wg *sync.WaitGroup, c *int) {
 	fmt.Println("c: ", *c)
 	time.Sleep(1 * time.Second)
 	fmt.Println("read unlock")
+}
+
+func write(mu *sync.RWMutex, wg *sync.WaitGroup, c *int) {
+	defer wg.Done()
+	mu.Lock()
+	defer mu.Unlock()
+	fmt.Println("write lock")
+	*c += 1
+	time.Sleep(1 * time.Second)
+	fmt.Println("write unlock")
 }
 
 func Mutexes() {
