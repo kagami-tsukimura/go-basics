@@ -37,6 +37,17 @@ func bufferedChannel() {
 	}
 }
 
+func generateCountStream() <-chan int {
+	ch := make(chan int)
+	go func() {
+		defer close(ch)
+		for i := 0; i < 5; i++ {
+			ch <- i
+		}
+	}()
+	return ch
+}
+
 func ChannelClosed() {
 	normalChannel()
 	bufferedChannel()
