@@ -31,8 +31,20 @@ func subTask(ctx context.Context, wg *sync.WaitGroup, id int) {
 	}
 }
 
+func taskCancel(wg *sync.WaitGroup) {
+	ctx, cancel := context.WithCancel(context.Background())
+	wg.Add(3)
+	go subTask(ctx, wg, 1)
+	go subTask(ctx, wg, 2)
+	go subTask(ctx, wg, 3)
+	cancel()
+	wg.Wait()
+}
+
 func Contexts() {
 	// Context: メインgoroutineからサブgoroutineを一括キャンセル
 	var wg sync.WaitGroup
 	taskTimeout(&wg)
+	taskCancel(&wg)
+
 }
