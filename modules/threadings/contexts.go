@@ -76,7 +76,7 @@ func normalTask(ctx context.Context) (string, error) {
 }
 
 func criticalTask(ctx context.Context) (string, error) {
-	ctx, cancel := context.WithTimeout(ctx, 1200*time.Millisecond)
+	ctx, cancel := context.WithTimeout(ctx, 1000*time.Millisecond)
 	defer cancel()
 	t := time.NewTicker(1000 * time.Millisecond)
 
