@@ -23,6 +23,7 @@ func main() {
 	// threadings.Goroutines()
 	// threadings.Tracers()
 	// threadings.Channels()
-	threadings.ChannelClosed()
+	// threadings.ChannelClosed()
+	threadings.Selects()
 
 }
