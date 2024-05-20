@@ -92,17 +92,29 @@ func criticalTask(ctx context.Context) (string, error) {
 func taskDeadline(wg *sync.WaitGroup) {
 	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(40*time.Millisecond))
 	defer cancel()
-	wg.Add(1)
+	ch := subTaskDeadline(ctx)
+	v, ok := <-ch
+	if ok {
+		fmt.Println(v)
+	}
+}
+
+func subTaskDeadline(ctx context.Context) <-chan string {
+	ch := make(chan string)
 	go func() {
-		defer wg.Done()
-		v, err := criticalTask(ctx)
-		if err != nil {
-			fmt.Printf("critical task cancelled due to: %v\n", err)
-			return
+		defer close(ch)
+		deadline, ok := ctx.Deadline()
+		if ok {
+			if deadline.Sub(time.Now().Add(30*time.Millisecond)) < 0 {
+				fmt.Println("deadline")
+				return
+			}
 		}
-		fmt.Println("success: ", v)
+		time.Sleep(30 * time.Millisecond)
+		ch <- "OK"
 	}()
-	wg.Wait()
+
+	return ch
 }
 
 func Contexts() {
