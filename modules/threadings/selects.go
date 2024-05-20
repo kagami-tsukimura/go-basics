@@ -1,6 +1,7 @@
 package threadings
 
 import (
+	"fmt"
 	"sync"
 	"time"
 )
@@ -20,4 +21,15 @@ func Selects() {
 		time.Sleep(800 * time.Millisecond)
 		ch2 <- "B"
 	}()
+
+	for ch1 != nil || ch2 != nil {
+		select {
+		case v := <-ch1:
+			fmt.Println(v)
+			ch1 = nil
+		case v := <-ch2:
+			fmt.Println(v)
+			ch2 = nil
+		}
+	}
 }
