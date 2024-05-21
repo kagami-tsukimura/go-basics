@@ -8,6 +8,10 @@ import (
 	"time"
 )
 
+func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-chan time.Time) {
+
+}
+
 func Hearts() {
 	file, err := os.Create("heart.txt")
 	if err != nil {
