@@ -16,7 +16,7 @@ func doTask(ctx context.Context, task string) error {
 	case "fake2":
 		t = time.NewTicker(700 * time.Millisecond)
 	default:
-		t = time.NewTicker(200 * time.Millisecond)
+		t = time.NewTicker(1000 * time.Millisecond)
 	}
 
 	select {
@@ -37,9 +37,10 @@ func ErrGroups() {
 	// Timeout時に完了していないgoroutineをキャンセル
 	ctx, cancel := context.WithTimeout(context.Background(), 800*time.Millisecond)
 	defer cancel()
+
 	// 初回エラー時にキャンセル
-	eg, ctx := errgroup.WithContext(context.Background())
-	s := []string{"task1", "fake1", "task2", "fake2", "task3"}
+	eg, ctx := errgroup.WithContext(ctx)
+	s := []string{"task1", "task2", "task3", "task4"}
 
 	for _, v := range s {
 		task := v
