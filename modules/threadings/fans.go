@@ -87,6 +87,7 @@ func Fans() {
 		// CPUのロジカルcore分、重たい処理を並行で実行
 		outChs[i] = fanOut(ctx, inData, i+1)
 	}
+	// 複数channelを結合
 	out := fanIn(ctx, outChs...)
 	for v := range out {
 		fmt.Println(v)
