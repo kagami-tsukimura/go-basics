@@ -24,4 +24,9 @@ func ErrGroups() {
 			return doTask(task)
 		})
 	}
+
+	if err := eg.Wait(); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("all tasks done")
 }
