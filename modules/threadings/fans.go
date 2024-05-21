@@ -1,6 +1,6 @@
 package threadings
 
 func Fans() {
-	// Fan-out: channelを複数のgoroutineに分散
+	// Fan-out: Pipeline内のchannel値を複数のgoroutineに分散
 	// Fan-in
 }
