@@ -71,4 +71,5 @@ func Pipelines() {
 		}
 		i++
 	}
+	fmt.Println("finished")
 }
