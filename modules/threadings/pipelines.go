@@ -58,16 +58,15 @@ func Pipelines() {
 	nums := []int{1, 2, 3, 4, 5}
 	var i int
 	flag := true
-	in := generator(ctx, nums...)
-	for n := range offset(ctx, double(ctx, in)) {
-		if flag {
-			i = n
-			flag = false
-			continue
-		}
-		if i == n {
+
+	for v := range double(ctx, offset(ctx, double(ctx, generator(ctx, nums...)))) {
+		if i == 3 {
 			cancel()
+			flag = false
 		}
+		if flag {
+			fmt.Println(v)
+		}
+		i++
 	}
-	fmt.Println(i)
 }
