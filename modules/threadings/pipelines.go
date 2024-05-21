@@ -2,6 +2,7 @@ package threadings
 
 import (
 	"context"
+	"fmt"
 )
 
 func generator(ctx context.Context, nums ...int) <-chan int {
@@ -55,5 +56,18 @@ func Pipelines() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	nums := []int{1, 2, 3, 4, 5}
-	generator(ctx, nums...)
+	var i int
+	flag := true
+	in := generator(ctx, nums...)
+	for n := range offset(ctx, double(ctx, in)) {
+		if flag {
+			i = n
+			flag = false
+			continue
+		}
+		if i == n {
+			cancel()
+		}
+	}
+	fmt.Println(i)
 }
