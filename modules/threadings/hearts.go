@@ -64,6 +64,7 @@ func Hearts() {
 	const wdtTimeout = 800 * time.Millisecond
 	const beatInterval = 500 * time.Millisecond
 	heartBeat, v := tasks(ctx, beatInterval)
+
 loop:
 	for {
 		select {
