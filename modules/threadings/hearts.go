@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -77,7 +78,7 @@ loop:
 			if !ok {
 				break loop
 			}
-			t := strings.Sprit(r.String(), "m=")
+			t := strings.Split(r.String(), "m=")
 			fmt.Printf("value: %v [s]\n", t[1])
 		case <-time.After(wdtTimeout):
 			errorLogger.Println("wdt timeout")
