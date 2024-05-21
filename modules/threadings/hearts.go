@@ -73,7 +73,7 @@ loop:
 			if !ok {
 				break loop
 			}
-			fmt.Println("beat pulse")
+			fmt.Println("beat pulse⚡")
 		case r, ok := <-v:
 			if !ok {
 				break loop
