@@ -31,6 +31,7 @@ func main() {
 	// threadings.Contexts()
 	// threadings.ErrGroups()
 	// threadings.Pipelines()
-	threadings.Fans()
+	// threadings.Fans()
+	threadings.Hearts()
 
 }
