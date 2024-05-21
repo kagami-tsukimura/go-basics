@@ -1,0 +1,5 @@
+package threadings
+
+func Fans() {
+
+}

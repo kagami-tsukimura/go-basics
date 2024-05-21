@@ -30,6 +30,7 @@ func main() {
 	// threadings.Mutexes()
 	// threadings.Contexts()
 	// threadings.ErrGroups()
-	threadings.Pipelines()
+	// threadings.Pipelines()
+	threadings.Fans()
 
 }
