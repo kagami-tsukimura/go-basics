@@ -2,6 +2,7 @@ package threadings
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -62,5 +63,24 @@ func Hearts() {
 	defer cancel()
 	const wdtTimeout = 800 * time.Millisecond
 	const beatInterval = 500 * time.Millisecond
-	heartBeat, out := tasks(ctx, beatInterval)
+	heartBeat, v := tasks(ctx, beatInterval)
+loop:
+	for {
+		select {
+		case _, ok := <-heartBeat:
+			if !ok {
+				break loop
+			}
+			fmt.Println("beat pulse")
+		case r, ok := <-v:
+			if !ok {
+				break loop
+			}
+			t := strings.Sprit(r.String(), "m=")
+			fmt.Printf("value: %v [s]\n", t[1])
+		case <-time.After(wdtTimeout):
+			errorLogger.Println("wdt timeout")
+			break loop
+		}
+	}
 }
