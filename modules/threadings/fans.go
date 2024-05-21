@@ -81,6 +81,7 @@ func Fans() {
 	nums := []int{1, 2, 3, 4, 5}
 
 	outChs := make([]<-chan string, cores)
+	// channel入力データ生成
 	inData := fansGenerator(ctx, nums...)
 	for i := 0; i < cores; i++ {
 		outChs[i] = fanOut(ctx, inData, i+1)
