@@ -88,8 +88,18 @@ func Fans() {
 		outChs[i] = fanOut(ctx, inData, i+1)
 	}
 	// 複数channelを結合
-	out := fanIn(ctx, outChs...)
-	for v := range out {
-		fmt.Println(v)
+	var i int
+	flag := true
+
+	for v := range fanIn(ctx, outChs...) {
+		if i == 3 {
+			cancel()
+			flag = false
+		}
+		if flag {
+			fmt.Println(v)
+		}
+		i++
 	}
+	fmt.Println("finished")
 }
