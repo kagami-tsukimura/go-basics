@@ -16,7 +16,7 @@ func doTask(ctx context.Context, task string) error {
 	case "fake2":
 		t = time.NewTicker(700 * time.Millisecond)
 	default:
-		t = time.NewTicker(1000 * time.Millisecond)
+		t = time.NewTicker(200 * time.Millisecond)
 	}
 
 	select {
