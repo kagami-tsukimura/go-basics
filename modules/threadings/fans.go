@@ -26,6 +26,7 @@ func fanOut(ctx context.Context, in <-chan int, id int) <-chan string {
 	out := make(chan string)
 	go func() {
 		defer close(out)
+		// 重たい処理の無名関数を代入
 		heavyWork := func(i int, id int) string {
 			time.Sleep(200 * time.Millisecond)
 			return fmt.Sprintf("result:%v (id:%v)", i*i, id)
