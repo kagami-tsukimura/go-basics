@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-chan time.Time) {
+func tasks(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-chan time.Time) {
 	heartBeat := make(chan struct{})
 	out := make(chan time.Time)
 	go func() {
@@ -25,13 +25,26 @@ func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-c
 		}
 
 		sendValue := func(t time.Time) {
+			for {
+				select {
+				case <-ctx.Done():
+					return
+				case <-pulse.C:
+					sendPulse()
+				case out <- t:
+					return
+				}
+			}
+		}
+
+		for {
 			select {
 			case <-ctx.Done():
 				return
 			case <-pulse.C:
 				sendPulse()
-			case out <- t:
-				return
+			case t := <-task.C:
+				sendValue(t)
 			}
 		}
 	}()
@@ -49,4 +62,5 @@ func Hearts() {
 	defer cancel()
 	const wdtTimeout = 800 * time.Millisecond
 	const beatInterval = 500 * time.Millisecond
+	heartBeat, out := tasks(ctx, beatInterval)
 }
