@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"runtime"
+	"sync"
 	"time"
 )
 
@@ -41,6 +42,31 @@ func fanOut(ctx context.Context, in <-chan int, id int) <-chan string {
 		}
 	}()
 
+	return out
+}
+
+func fanIn(ctx context.Context, chs ...<-chan string) <-chan string {
+	var wg sync.WaitGroup
+	out := make(chan string)
+	multiplex := func(ch <-chan string) {
+		defer wg.Done()
+		for text := range ch {
+			select {
+			case <-ctx.Done():
+				return
+			case out <- text:
+			}
+		}
+	}
+
+	wg.Add(len(chs))
+	for _, ch := range chs {
+		go multiplex(ch)
+	}
+	go func() {
+		wg.Wait()
+		close(out)
+	}()
 	return out
 }
 
