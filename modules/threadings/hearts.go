@@ -1,7 +1,9 @@
 package threadings
 
-import "fmt"
+import (
+	"os"
+)
 
 func Hearts() {
-	fmt.Println("hearts")
+	file, err := os.Create("heart.txt")
 }
