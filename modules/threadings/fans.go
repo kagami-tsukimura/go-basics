@@ -84,6 +84,7 @@ func Fans() {
 	// channel入力データ生成
 	inData := fansGenerator(ctx, nums...)
 	for i := 0; i < cores; i++ {
+		// CPUのロジカルcore分、重たい処理を並行で実行
 		outChs[i] = fanOut(ctx, inData, i+1)
 	}
 	out := fanIn(ctx, outChs...)
