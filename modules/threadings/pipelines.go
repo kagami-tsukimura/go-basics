@@ -34,6 +34,21 @@ func double(ctx context.Context, in <-chan int) <-chan int {
 	return out
 }
 
+func offset(ctx context.Context, in <-chan int) <-chan int {
+	out := make(chan int)
+	go func() {
+		defer close(out)
+		for n := range in {
+			select {
+			case <-ctx.Done():
+				return
+			case out <- n + 2:
+			}
+		}
+	}()
+	return out
+}
+
 func Pipelines() {
 	// Pipeline: 各処理をステージ上に配置
 	// channel送受信でプロセスを流す
