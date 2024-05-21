@@ -79,5 +79,14 @@ func Fans() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	nums := []int{1, 2, 3, 4, 5}
-	var i int
+
+	outChs := make([]<-chan string, cores)
+	inData := fansGenerator(ctx, nums...)
+	for i := 0; i < cores; i++ {
+		outChs[i] = fanOut(ctx, inData, i+1)
+	}
+	out := fanIn(ctx, outChs...)
+	for v := range out {
+		fmt.Println(v)
+	}
 }
