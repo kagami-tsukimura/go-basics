@@ -29,6 +29,7 @@ func main() {
 	// threadings.Packages()
 	// threadings.Mutexes()
 	// threadings.Contexts()
-	threadings.ErrGroups()
+	// threadings.ErrGroups()
+	threadings.Pipelines()
 
 }
