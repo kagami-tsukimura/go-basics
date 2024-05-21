@@ -39,12 +39,17 @@ func tasks(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-
 			}
 		}
 
+		var i int
 		for {
 			select {
 			case <-ctx.Done():
 				return
 			case <-pulse.C:
+				if i == 3 {
+					time.Sleep(1000 * time.Millisecond)
+				}
 				sendPulse()
+				i++
 			case t := <-task.C:
 				sendValue(t)
 			}
