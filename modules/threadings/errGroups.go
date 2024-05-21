@@ -25,9 +25,6 @@ func doTask(ctx context.Context, task string) error {
 		return ctx.Err()
 	case <-t.C:
 		t.Stop()
-		if task == "fake1" || task == "fake2" {
-			return fmt.Errorf("%v process failed", task)
-		}
 		fmt.Printf("%v done\n", task)
 	}
 	return nil
