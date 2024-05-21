@@ -11,9 +11,9 @@ import (
 func doTask(ctx context.Context, task string) error {
 	var t *time.Ticker
 	switch task {
-	case "fake1":
+	case "task1":
 		t = time.NewTicker(500 * time.Millisecond)
-	case "fake2":
+	case "task2":
 		t = time.NewTicker(700 * time.Millisecond)
 	default:
 		t = time.NewTicker(1000 * time.Millisecond)
