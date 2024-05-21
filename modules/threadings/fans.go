@@ -35,6 +35,7 @@ func fanOut(ctx context.Context, in <-chan int, id int) <-chan string {
 			select {
 			case <-ctx.Done():
 				return
+			// 重たい処理の無名関数を実行
 			case out <- heavyWork(v, id):
 			}
 		}
