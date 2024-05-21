@@ -17,4 +17,11 @@ func doTask(task string) error {
 func ErrGroups() {
 	eg := new(errgroup.Group)
 	s := []string{"task1", "fake1", "task2", "fake2"}
+
+	for _, v := range s {
+		task := v
+		eg.Go(func() error {
+			return doTask(task)
+		})
+	}
 }
