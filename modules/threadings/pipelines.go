@@ -60,6 +60,7 @@ func Pipelines() {
 	flag := true
 
 	// 右から順に、generator -> double -> offset -> double
+	// 右から左に、返り値を第2引数に渡していく
 	for v := range double(ctx, offset(ctx, double(ctx, generator(ctx, nums...)))) {
 		if i == 3 {
 			cancel()
