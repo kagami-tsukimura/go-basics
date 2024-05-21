@@ -9,7 +9,16 @@ import (
 )
 
 func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-chan time.Time) {
-
+	heartBeat := make(chan struct{})
+	out := make(chan time.Time)
+	go func() {
+		defer close(heartBeat)
+		defer close(out)
+		pulse := time.NewTicker(beatInterval)
+		defer pulse.Stop()
+		for {
+			select {
+			case <-ctx.Done():}}
 }
 
 func Hearts() {
