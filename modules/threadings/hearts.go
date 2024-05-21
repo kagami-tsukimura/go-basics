@@ -15,10 +15,16 @@ func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-c
 		defer close(heartBeat)
 		defer close(out)
 		pulse := time.NewTicker(beatInterval)
-		defer pulse.Stop()
-		for {
+		task := time.NewTicker(2 * beatInterval)
+
+		sendPulse := func() {
 			select {
-			case <-ctx.Done():}}
+			case heartBeat <- struct{}{}:
+			default:
+			}
+		}
+	}()
+	return heartBeat, out
 }
 
 func Hearts() {
