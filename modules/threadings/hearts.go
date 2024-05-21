@@ -23,6 +23,17 @@ func task(ctx context.Context, beatInterval time.Duration) (<-chan struct{}, <-c
 			default:
 			}
 		}
+
+		sendValue := func(t time.Time) {
+			select {
+			case <-ctx.Done():
+				return
+			case <-pulse.C:
+				sendPulse()
+			case out <- t:
+				return
+			}
+		}
 	}()
 	return heartBeat, out
 }
